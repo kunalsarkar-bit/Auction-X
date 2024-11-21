@@ -571,24 +571,7 @@ const CarDetailsPage = () => {
                   </Card>
                 )}
 
-                <Card className="mt-3">
-                  <Card.Body>
-                    <Form.Group controlId="formBidAmount">
-                      <Form.Label>Enter Your Bid:</Form.Label>
-                      <Form.Control
-                        type="number"
-                        placeholder={`Minimum: ₹${currentBid + 200}`}
-                        value={bidAmount}
-                        onChange={(e) => setBidAmount(e.target.value)}
-                      />
-                    </Form.Group>
-                    <div className="image_adjust" onClick={handleBidSubmit}>
-                      <div className="ProductDetails-fa">
-                        <i class="fas fa-gavel fa-5x"></i>
-                      </div>
-                    </div>
-                  </Card.Body>
-                </Card>
+                
 
                 {alertMessage && (
                   <Alert

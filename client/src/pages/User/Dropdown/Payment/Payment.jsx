@@ -241,7 +241,7 @@ const PaymentPage = () => {
                 <img src={gpay} alt="GPay" className="me-3" width="40" />
                 <span>GPay</span>
               </div>
-              <span>Pay via PUNJAB 2188</span>
+              <span>Pay via Auction X Bank</span>
             </button>
           </div>
           <div className="list-group mt-3" onClick={donateNow}>
