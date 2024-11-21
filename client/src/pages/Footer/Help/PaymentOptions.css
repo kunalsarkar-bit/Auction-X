@@ -1,0 +1,83 @@
+/* Main container with black background and white text */
+.payment-options-container {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  margin-top: 80px;
+  border-radius: 8px;
+  display: block; /* Ensures all elements are stacked vertically */
+  padding-top: 80px;
+}
+
+/* Heading styles */
+.payment-options-container h1,
+.payment-options-container h3 {
+  color: #fafafa;
+}
+
+.payment-options-container h3 {
+  margin-top: 20px;
+}
+
+/* Ensures Terms & Conditions section aligns vertically */
+.payment-options-container .terms-section {
+  display: block; /* Overrides any inherited flex or grid properties */
+  margin-bottom: 1.5rem; /* Adds space below for separation */
+}
+
+/* Paragraph and list styling */
+.payment-options-container p,
+.payment-options-container ul {
+  margin-bottom: 1rem;
+}
+
+.payment-options-container ul {
+  padding-left: 1.2rem; /* Optional indentation */
+}
+
+.payment-options-container ul li {
+  margin-bottom: 0.5rem; /* Adds space between list items */
+}
+
+/* Adjust EMI section alignment */
+.payment-options-container .emi-section {
+  display: block;
+  margin-top: 1.5rem;
+}
+
+/* Table styling for readability */
+.payment-options-table {
+  color: #fff;
+  margin-top: 1rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payment-options-table th,
+.payment-options-table td {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: center;
+}
+
+.payment-options-table th {
+  background-color: #1a1a1a;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .payment-options-container {
+    padding: 15px;
+  }
+  .payment-options-container h1 {
+    font-size: 1.5rem;
+  }
+  .payment-options-container h3 {
+    font-size: 1.2rem;
+  }
+  .payment-options-table th,
+  .payment-options-table td {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}

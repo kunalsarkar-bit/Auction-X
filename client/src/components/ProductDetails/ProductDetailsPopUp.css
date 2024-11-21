@@ -1,0 +1,260 @@
+/* Container for car listings */
+.carDetails-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Grid row and columns */
+.carDetails-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Added spacing between columns */
+}
+
+/* Card styling */
+.carDetails-col {
+  flex: 1 1 300px;
+  max-width: 300px;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for card */
+.carDetails-col:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Styling */
+.carDetails-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.carDetails-card-img {
+  width: 100%;
+  height: 250px; /* Set a fixed height for consistency */
+  object-fit: cover;
+  border-bottom: 2px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.carDetails-card-img:hover {
+  transform: scale(1.05); /* Zoom effect on image hover */
+}
+
+.carDetails-card-body {
+  padding: 15px;
+  color: #333;
+}
+
+.carDetails-card-title {
+  font-size: 1.5rem; /* Larger font size for better readability */
+  font-weight: bold;
+  color: #2d2d2d;
+  margin-bottom: 10px;
+}
+
+.carDetails-card-text {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+
+/* Style for blurred background */
+.carDetails-blur-background {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+/* Popup content box with increased width and two-column layout */
+.carDetails-popup-content {
+  display: flex;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  width: 90%;
+  height: 80%;
+  max-width: 1200px;
+  overflow-y: auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease, opacity 0.1s ease;
+  position: relative;
+  transform: scale(0.9);
+  opacity: 0;
+  animation: popupIn 0.1s forwards;
+}
+
+/* Left column for car details */
+.carDetails-popup-content-left {
+  flex: 1;
+  padding-right: 20px;
+  text-align: left;
+}
+
+/* Right column for the image carousel */
+.carDetails-popup-content-right {
+  flex: 2;
+}
+
+/* Carousel images inside the popup */
+/* Carousel container */
+
+
+
+/* Image styling */
+.carDetails-carousel-img {
+  width: 100%; /* Ensure the image fills the width */
+  height: 100%; /* Ensure the image fills the height */
+  object-fit: contain; /* Ensure the image covers the container while maintaining aspect ratio */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+
+
+ .carDetails-carousel-img {
+  object-fit: contain; /* Ensure the whole image is visible */
+  max-width: 100%; /* Allow the image to scale naturally */
+  max-height: 100%;
+  margin: auto; /* Center the image within the container */
+}
+
+/* Hover effect */
+
+
+.carDetails-popup {
+  position: fixed; /* Ensure the popup is fixed on the screen */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full screen width */
+  height: 100vh; /* Full screen height */
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background with opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; /* High z-index to overlay on top of everything */
+}
+
+/* Close button */
+.carDetails-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.carDetails-close-btn:hover {
+  color: #ff0000;
+}
+
+/* Footer styling */
+.carDetails-footer {
+  margin-top: 30px;
+  padding: 20px 0;
+  background-color: #f8f9fa;
+  text-align: center;
+  font-size: 1rem;
+  color: #777;
+}
+
+.carDetails-footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.carDetails-footer-col {
+  flex: 1;
+}
+
+.carDetails-footer p {
+  margin: 5px 0;
+  color: #333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popupIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+/* Button Styling */
+.carDetails-btn {
+  background: linear-gradient(to right, #99723c 10%, #fae570 40%, #000000 140%); /* Gold and black gradient button */
+  color: #000000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.carDetails-btn:hover {
+  background-color: #fae570; /* Light gold color for hover effect */
+  transform: translateY(-3px); /* Slight elevation on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carDetails-btn:active {
+  background-color: #99723c; /* Keep the golden color on active state */
+  transform: translateY(2px); /* Button presses down slightly on active */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.carDetails-btn:focus {
+  outline: none;
+  border: 2px solid #fae570; /* Golden border when focused */
+}
+
+.carDetails-btn-disabled {
+  background-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.carDetails-btn-lg {
+  padding: 15px 30px;
+  font-size: 1.2rem; /* Larger button */
+}
+
+.carDetails-btn-sm {
+  padding: 8px 16px;
+  font-size: 0.875rem; /* Smaller button */
+}

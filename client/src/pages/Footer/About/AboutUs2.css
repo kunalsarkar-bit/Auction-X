@@ -1,0 +1,103 @@
+/* Main container styling */
+.about-bewakoof-container {
+  font-family: 'Arial', sans-serif;
+  width: 100vw;
+  height: auto;
+  margin: 20px 0 0 0; /* Adds 20px margin at the top */
+  padding-top: 80px;
+  overflow-y: auto;
+  background-color: black;
+  color: white;
+}
+
+/* About Story Section */
+.about-story-section {
+  margin-top: -30px;
+  margin-bottom: 50px;
+}
+
+.about-story-title {
+  font-size: 4rem;
+  position: relative;
+  display: inline-block;
+}
+
+.about-story-title::after {
+  content: '';
+  width: 80px;
+  height: 5px;
+  background-color: #FFC107;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+.about-text-white {
+  font-size: 1.3rem;
+  color: white;
+}
+
+.about-text-muted {
+  color: #cccccc;
+}
+
+/* Impact Section */
+.about-impact-section {
+  background-color: black;
+  padding: 7% 0;
+  text-align: center;
+  color: white;
+}
+
+.about-mission-section p {
+  font-size: 1.75rem;
+}
+
+/* Distinctive Fashion Section */
+.about-distinctive-fashion {
+  margin-top: 40px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.about-fashion-image {
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+/* Stats Section */
+.about-stats-section {
+  background-color: #1a1a1a;
+  padding: 40px 0;
+  border-radius: 10px;
+}
+
+.about-stats-section h3,
+.about-stats-section p {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+  .about-bewakoof-container {
+    padding-top: 40px; /* Adjust padding for smaller screens */
+  }
+
+  .about-story-title {
+    font-size: 2.5rem; /* Adjust title size for smaller screens */
+  }
+
+  .about-text-white {
+    font-size: 1rem; /* Adjust text size for smaller screens */
+  }
+
+  .about-impact-section h1 {
+    font-size: 1.5rem; /* Adjust impact section title for smaller screens */
+  }
+
+  .about-stats-section h3 {
+    font-size: 1.1rem; /* Adjust stat titles for smaller screens */
+  }
+}

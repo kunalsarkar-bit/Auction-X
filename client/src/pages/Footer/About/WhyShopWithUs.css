@@ -1,0 +1,112 @@
+.whyus-container {
+    background-color: #000000; /* Black background */
+    color: white; /* White text */
+    margin: 80px 0 20px; /* Added padding at the top */
+}
+
+.whyus-heading {
+    font-weight: bold;
+    color: #fff; /* White heading text */
+}
+
+.whyus-card {
+    background-color: #f9f9f9; /* Soft background color for cards */
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.whyus-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.whyus-card-title {
+    font-size: 1.25rem; /* Adjust heading size */
+    color: #333; /* Darker text for heading */
+}
+
+.whyus-card-text {
+    font-size: 0.95rem; /* Slightly smaller text for the description */
+    color: #666; /* Muted text color for the description */
+}
+
+.whyus-testimonial-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative; /* Required for positioning arrows */
+}
+
+.whyus-testimonial-heading {
+    font-weight: bold;
+    color: #fff; /* White heading text */
+    letter-spacing: 2px;
+}
+
+.whyus-testimonial-box {
+    border-radius: 5px;
+    background-color: #fff; /* White background for testimonials */
+    position: relative;
+    padding: 20px;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.whyus-testimonial-header {
+    margin-bottom: 1rem;
+}
+
+.whyus-testimonial-name {
+    font-weight: bold;
+    color: #e74c3c; /* Red text for name */
+    font-size: 1.2rem;
+}
+
+.whyus-testimonial-role {
+    font-size: 0.9rem;
+    color: #bbb; /* Muted text color for role */
+}
+
+.whyus-testimonial-quote {
+    color: #000; /* Black quote icon */
+}
+
+.whyus-testimonial-text {
+    font-size: 0.95rem;
+    color: #333; /* Dark text for testimonial text */
+    line-height: 1.6;
+}
+
+/* Adjust arrow positioning */
+.whyus-carousel-control-prev,
+.whyus-carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+}
+
+.whyus-carousel-control-prev-icon,
+.whyus-carousel-control-next-icon {
+    background-color: #e74c3c; /* Red background for arrows */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+/* Move arrows further to the sides */
+.whyus-carousel-control-prev {
+    left: -60px; /* Move arrow to the left side */
+}
+
+.whyus-carousel-control-next {
+    right: -60px; /* Move arrow to the right side */
+}
+
+@media (max-width: 768px) {
+    .whyus-carousel-control-prev {
+        left: -30px; /* Adjust for smaller screens */
+    }
+
+    .whyus-carousel-control-next {
+        right: -30px; /* Adjust for smaller screens */
+    }
+}

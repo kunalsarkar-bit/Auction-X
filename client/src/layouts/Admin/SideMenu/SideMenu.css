@@ -1,0 +1,135 @@
+/* SideMenu Styling */
+.sidemenu {
+    padding-top: 10px;
+    /* Padding at the top */
+    transition: transform 0.3s ease;
+    /* Smooth transition for sliding effect */
+    background-color: black;
+    /* Set total black background */
+    height: auto !important;
+}
+
+/* Menu Styling */
+.menuvertical {
+    min-height: 100px;
+    /* Minimum height to ensure visibility */
+    height: auto;
+    /* Height will adjust based on content */
+    overflow: auto;
+    /* Allow scrolling if content overflows */
+    border-radius: 20px;
+    background-color: black;
+    /* Total black for menu */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidemenu {
+        position: fixed;
+        /* Fixed position on mobile */
+        top: 50px;
+        /* Adjust top position to allow space for a toggle or header */
+        left: 0;
+        /* Start aligned to the left */
+        width: 250px;
+        /* Set width */
+        height: calc(100% - 50px);
+        /* Full height minus top space */
+        z-index: 999;
+        /* Ensure it is above other content */
+        transform: translateY(0);
+        /* No translation needed since it is always active */
+        transition: transform 0.3s ease;
+        /* Smooth transition */
+    }
+
+    .menu-toggle {
+        color: black;
+        /* Button color */
+        padding: 10px;
+        /* Padding for button */
+        border: none;
+        /* Remove border */
+        border-radius: 10px;
+        /* Rounded corners */
+        cursor: pointer;
+        /* Pointer cursor on hover */
+        position: absolute;
+        /* Position button within the sidebar */
+        top: 75px;
+        /* Positioning */
+        z-index: 1000;
+        /* Above other elements */
+        font-size: 24px;
+        /* Font size for button */
+        background-color: black;
+        /* Black background for the button */
+        color: #FFD700 !important;
+        /* Golden yellow color for text */
+        transition: background-color 0.3s ease;
+        /* Smooth transition for background color */
+    }
+
+    .menu-toggle:hover {
+        /* Change background to golden yellow on hover */
+        color: black;
+        background: none;
+    }
+}
+
+.sidemenu-logout{
+    filter: drop-shadow(0 0 8px rgba(255, 223, 150, 0.8)) /* Inner glow with gold tint */
+        drop-shadow(0 0 16px rgba(255, 223, 150, 0.6)) /* Outer glow for depth */
+        drop-shadow(0 0 24px rgba(255, 223, 150, 0.4)) /* Larger, softer glow */
+        drop-shadow(0 0 32px rgba(255, 223, 150, 0.2)); /* Soft fading outermost glow */
+
+}
+
+
+/* Additional Menu Item Styling */
+.ant-menu-item {
+    color: #FFD700 !important;
+    /* Default neon color for text */
+    margin-bottom: 20px !important;
+    margin-top: 10px !important;
+    justify-content: center;
+    position: relative;
+    /* To position the neon effect */
+    padding: 35px;
+    /* Add some padding for better appearance */
+    transition: color 0.3s ease;
+    /* Smooth transition for text color */
+    display: flex;
+    align-items: center;
+    box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+}
+
+/* Boosted Effect on Hover */
+.ant-menu-item:hover {
+    color: #ffd700 !important;
+    /* Same color on hover */
+    box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+    /* Boosted neon glow effect */
+}
+
+/* Selected Menu Item Styling */
+.ant-menu-item-selected {
+    color: #00ffff !important;
+    /* Ensure neon color for selected item */
+    background-color: transparent !important;
+    /* Remove any default background color */
+    box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+    /* Neon glow effect for selected item */
+}

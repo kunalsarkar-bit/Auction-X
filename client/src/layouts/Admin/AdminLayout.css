@@ -1,0 +1,36 @@
+.admin-layout {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+   
+  }
+  
+  .layout-body {
+    display: flex;
+    flex: 1; /* Take the available height */
+    padding-top: 3%;
+    
+  }
+  
+  .sidemenu {
+    width: 200px; /* Fixed width for the sidebar */
+    margin-bottom: 23px;
+    padding: 10px;
+    margin-top: 40px;
+    margin-left: 4px;
+    background-color: black;
+    border-radius: 20px;
+    box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+  }
+  
+  .page-content {
+    flex: 1; /* Take the remaining width */
+    overflow-y: auto; /* Allow scrolling if needed */
+    
+    padding-left: 160px;
+  }
+  

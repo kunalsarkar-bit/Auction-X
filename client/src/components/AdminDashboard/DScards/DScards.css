@@ -1,0 +1,29 @@
+/* DSCards Container Styling */
+.dscards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Center cards */
+  margin: 20px 0; /* Margin around the card group */
+  gap: 20px; /* Add some space between the cards */
+}
+
+/* Responsive Card Styling */
+@media (max-width: 768px) {
+  .dscards {
+    flex-direction: column; /* Stack cards on smaller screens */
+    align-items: center; /* Center align cards */
+  }
+}
+
+@media (max-width: 480px) {
+  .ant-card {
+      width: 100%; /* Make card take up full width */
+      margin-bottom: 15px; /* Add some margin below each card */
+  }
+  .ant-statistic-value {
+      font-size: 20px; /* Adjust the statistic value size for smaller screens */
+  }
+  .anticon {
+      font-size: 28px; /* Adjust icon size for smaller screens */
+  }
+}

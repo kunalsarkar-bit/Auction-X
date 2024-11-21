@@ -1,0 +1,11 @@
+
+  
+  @media (max-width: 768px) {
+    .dashboard {
+      padding: 10px; 
+    }
+    .dashboard .ant-card {
+      min-width: 100%; 
+    }
+  }
+  

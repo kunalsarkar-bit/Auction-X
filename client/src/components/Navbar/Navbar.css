@@ -1,0 +1,620 @@
+/* General Reset for all elements */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+a {
+  margin: 0;
+  /* Reset margin */
+  padding: 0;
+  /* Reset padding */
+  box-sizing: border-box;
+  /* Set box-sizing to border-box for easier sizing */
+}
+
+/* Header Styling */
+header {
+  display: flex;
+  /* Flexbox layout */
+  align-items: center;
+  /* Align items vertically center */
+  justify-content: space-between;
+  /* Space between items */
+  padding: 15px 30px;
+  /* Padding for header */
+  background-color: #000;
+  /* Background color */
+  color: var(--text-color);
+  /* Text color */
+  position: fixed;
+  /* Fixed position */
+  width: 100%;
+  /* Full width */
+  top: 0;
+  /* Align to the top */
+  z-index: 1000;
+  /* Ensure it’s on top */
+  box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+  /* Shadow effects */
+  /* border-radius: 15px; */
+  /* Rounded corners */
+  margin-bottom: 20px;
+  /* Margin below header */
+  border-top: 1px solid #ccc;
+  /* Border at the top */
+  border-bottom: 1px solid #ccc;
+  /* Border at the bottom */
+}
+
+/* Header hover effect */
+header:hover {
+  box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+  /* Enhanced shadow on hover */
+}
+
+/* Logo Styling */
+.logo img {
+  width: 180px;
+  /* Logo width */
+  height: 40px;
+  /* Logo height */
+  margin-left: 30px;
+  /* Margin on the left */
+}
+
+.logo {
+  transition: transform 0.2s ease, filter 0.2s ease;
+  /* Smooth transition for both properties */
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  /* Slightly enlarge the logo */
+
+  filter: drop-shadow(0 0 10px rgba(255, 223, 150, 0.8)) /* Inner glow with gold tint */
+        drop-shadow(0 0 20px rgba(255, 223, 150, 0.6)) /* Outer glow for depth */
+        drop-shadow(0 0 30px rgba(255, 223, 150, 0.4)) /* Larger, softer glow */
+        drop-shadow(0 0 40px rgba(255, 223, 150, 0.2)); /* Soft fading outermost glow */
+
+}
+
+/* Navigation Styling */
+nav {
+  flex: 1;
+  /* Allow nav to grow */
+  display: flex;
+  /* Flex layout */
+  justify-content: flex-end;
+  /* Align to the right */
+  margin-left: 20px;
+  /* Margin on the left */
+}
+
+/* Navigation list styles */
+nav ul {
+  display: flex;
+  /* Flex layout */
+  list-style: none;
+  /* Remove bullets */
+  padding: 0;
+  /* Remove padding */
+  margin: 0;
+  /* Remove margin */
+}
+
+nav ul li {
+  margin: 0 15px;
+  /* Margin between list items */
+}
+
+/* Button styling in nav */
+nav ul li button {
+  padding: 10px 20px;
+  /* Padding for buttons */
+  background-color: #000;
+  /* Background color */
+  border: none;
+  /* No border */
+  border-radius: 40px;
+  /* Rounded corners */
+  cursor: pointer;
+  /* Pointer on hover */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  /* Transition effects */
+  color: #fff;
+  /* Text color */
+  font-family: Arial, Helvetica, sans-serif;
+  /* Font family */
+  font-weight: 700;
+  /* Bold text */
+  text-shadow: 0 0 5px #bf953f, 0 0 10px #bf953f;
+  /* Text shadow */
+  text-decoration: none;
+  /* No underline */
+}
+
+/* Button hover effect */
+nav ul li button:hover {
+  transform: translateX(-10px);
+  /* Move left on hover */
+  background-image: linear-gradient(to right, #bf953f, #fcf6ba);
+  /* Gradient on hover */
+  color: #000;
+  /* Change text color */
+  transform: scale(1.05);
+  /* Scale up on hover */
+  box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+}
+
+/* Search Bar Styling */
+.search-bar {
+  position: relative;
+  /* Position relative for absolute child elements */
+  display: flex;
+  /* Flex layout to align items */
+  align-items: center;
+  /* Center vertically */
+}
+
+.search-bar input[type="text"] {
+  background-color: #fff;
+  /* Background color */
+  padding: 8px;
+  /* Padding */
+  border-radius: 20px;
+  /* Rounded corners */
+  border: none;
+  /* No border */
+  outline: none;
+  /* Remove outline */
+  width: 200px;
+  /* Width for desktop */
+  transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
+  /* Transition for focus */
+  padding-left: 16px;
+  /* Padding on left */
+  padding-right: 32px;
+  /* Padding on right */
+  margin-right: 15px;
+}
+
+.search-bar input[type="text"]:focus {
+  width: 300px;
+  /* Wider on focus */
+  padding-right: 10px;
+
+
+}
+
+
+/* Search button styling */
+.search-bar button {
+  position: absolute;
+  /* Position absolute for alignment */
+  right: 5px;
+  /* Right alignment */
+  top: 50%;
+  /* Center vertically */
+  transform: translateY(-50%);
+  /* Adjust for vertical centering */
+  border: none;
+  /* No border */
+  background: none;
+  /* No background */
+  cursor: pointer;
+  /* Pointer on hover */
+  top: 50%;
+  color: #333;
+  transition: transform 0.3s ease;
+  /* Smooth transition */
+  margin-right: 15px;
+}
+
+.search-bar button:hover {
+  border-radius: 50%;
+  background: none;
+}
+
+/* Profile Button and Dropdown */
+.profile-btn {
+  position: relative; /* Keep position relative to enable dropdown positioning */
+  width: 40px;  
+  height: 40px; 
+  border-radius: 50%; /* Make the container circular */
+  transition: background-image 0.3s, box-shadow 0.3s;
+}
+
+.profile-btn button {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  border-radius: 50%; /* Ensure the button is circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1; /* Keep it on top of the dropdown */
+}
+
+.profile-btn img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;  /* Ensure the image is circular */
+  object-fit: cover;   /* Prevent image stretching */
+  border: 2px solid #fade3d;
+}
+
+/* Dropdown menu styling */
+.profile-dropdown {
+  width: 100%;
+  position: absolute;
+  top: 50px; /* Position below the profile button */
+  right: 0;
+  display: none; /* Initially hidden */
+  background-color: #000;
+  border-radius: 18px;
+  box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+  z-index: 0; /* Keep dropdown behind the profile button */
+}
+
+.profile-dropdown button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 50px;
+  background: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  background-color: #000;
+  transition: background-color 0.2s ease, color 0.1s ease, transform 0.2s ease;
+}
+
+.profile-dropdown button:hover {
+  background-image: linear-gradient(to right, #bf953f, #fcf6ba);
+  color: #000;
+  background-color: #000;
+  border-radius: 18px;
+  box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+}
+
+/* Show dropdown on hover */
+.profile-btn:hover .profile-dropdown {
+  display: block;
+  border-radius: 18px;
+  box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+}
+
+.profile-btn:hover {
+  background-image: linear-gradient(to right, #bf953f, #fcf6ba);
+  border-radius: 30px;
+  box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+}
+
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fade3d;
+}
+
+
+.categories-dropdown {
+  position: relative; /* Ensure the dropdown positions correctly */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #000 !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1000; /* Ensure dropdown is on top */
+  display: none; /* Start as hidden */
+}
+
+.categories-dropdown button:focus + .dropdown-menu,
+.categories-dropdown:hover .dropdown-menu,
+.categories-dropdown:focus-within .dropdown-menu {
+  display: block; /* Show on hover or focus */
+}
+
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  /* Hidden by default */
+  cursor: pointer;
+  /* Pointer on hover */
+  font-size: 24px;
+  /* Font size */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  /* Initially hidden */
+  width: 250px;
+  height: 100%;
+  background-color: #000;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+  transition: right 0.3s ease;
+  /* Smooth slide transition */
+  z-index: 999;
+}
+
+.sidebar:hover {
+  box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+}
+
+
+.sidebar.open {
+  right: 0;
+  /* Slide in when open */
+}
+
+.sidebar .close-btn {
+  background: none;
+  /* No background */
+  border: none;
+  /* No border */
+  font-size: 24px;
+  /* Font size */
+  cursor: pointer;
+  /* Pointer on hover */
+  color: #fff;
+  /* Text color */
+  position: absolute;
+  /* Position absolute */
+  top: 10px;
+  /* Top position */
+  right: 10px;
+  /* Right position */
+}
+
+.sidebar .ListOption {
+  padding: 5px;
+  padding-top: 20px;
+}
+
+.sidebar .ListOption li {
+  margin: 10px 0;
+  /* Margin between items */
+}
+
+.sidebar .ListOption button {
+  
+box-shadow: 
+0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+
+}
+
+.sidebar-search {
+  padding: 20px;
+  /* Padding for search bar */
+}
+
+
+.ListOption li button {
+  background-image: linear-gradient(to right, #bf953f, #fcf6ba);
+  border: none;
+  padding: 10px 15px;
+  width: 100%;
+  color: #000;
+  /* Set text color */
+  font: inherit;
+  /* Inherit font */
+  cursor: pointer;
+  /* Pointer on hover */
+  border-radius: 20px;
+  text-align: left;
+  /* Left-align the text */
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    /* Hide desktop nav on mobile */
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 24px;
+    /* Increase the size of the icon */
+    color: #FFD700;
+    /* Bright color, like gold */
+    background-color: transparent;
+    /* Remove background */
+    border: none;
+    /* No border */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    text-shadow:
+      0 0 10px rgba(255, 215, 0, 0.8),
+      /* Gold glow with increased blur */
+      0 0 20px rgba(255, 215, 0, 0.6),
+      /* Stronger glow with more blur */
+      0 0 30px rgba(255, 215, 0, 0.4);
+    /* Additional glow for extra effect */
+  }
+
+
+  /* Desktop search bar visibility */
+  .search-bar {
+    display: flex;
+
+    /* Show search bar on desktop */
+  }
+
+  .sidebar .search-bar {
+    display: flex;
+    /* Show search bar in the sidebar */
+  }
+
+  .sidebar-search input[type="text"] {
+    width: 98%;
+    margin-right: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+  }
+
+  .sidebar-search button {
+    width: 100%;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #bf953f, #fcf6ba);
+    margin-top: 10px;
+  }
+
+  .desktop-search-bar {
+    display: none;
+  }
+
+  .logo img {
+    max-width: 150px;
+    /* Set a max width to control size while preserving aspect ratio */
+    height: auto;
+    /* Maintain the aspect ratio */
+    margin-left: -10px;
+    /* Adjust the value to shift the logo left */
+  }
+
+  .slidebarLogo {
+    margin-top: 170%;
+    margin-left: 22%;
+  }
+
+}
+
+@media (max-width: 1024px){
+  nav {
+    display: none;
+    /* Hide desktop nav on mobile */
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 24px;
+    /* Increase the size of the icon */
+    color: #FFD700;
+    /* Bright color, like gold */
+    background-color: transparent;
+    /* Remove background */
+    border: none;
+    /* No border */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    text-shadow:
+      0 0 10px rgba(255, 215, 0, 0.8),
+      /* Gold glow with increased blur */
+      0 0 20px rgba(255, 215, 0, 0.6),
+      /* Stronger glow with more blur */
+      0 0 30px rgba(255, 215, 0, 0.4);
+    /* Additional glow for extra effect */
+  }
+
+
+  /* Desktop search bar visibility */
+  .search-bar {
+    display: flex;
+
+    /* Show search bar on desktop */
+  }
+
+  .sidebar .search-bar {
+    display: flex;
+    /* Show search bar in the sidebar */
+  }
+
+  .sidebar-search input[type="text"] {
+    width: 98%;
+    margin-right: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+  }
+
+  .sidebar-search button {
+    width: 100%;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #bf953f, #fcf6ba);
+    margin-top: 10px;
+  }
+
+  .desktop-search-bar {
+    display: none;
+  }
+
+  .logo img {
+    max-width: 150px;
+    /* Set a max width to control size while preserving aspect ratio */
+    height: auto;
+    /* Maintain the aspect ratio */
+    margin-left: -10px;
+    /* Adjust the value to shift the logo left */
+  }
+
+  .slidebarLogo {
+    margin-top: 170%;
+    margin-left: 22%;
+  }
+}

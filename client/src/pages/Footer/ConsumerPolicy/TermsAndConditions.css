@@ -1,0 +1,52 @@
+/* Base Styles */
+.term-container {
+    background-color: #000;
+    color: #fff;
+    padding: 90px;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  
+  .term-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .term-paragraph {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+  
+  .term-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .term-button:hover {
+    background-color: #555;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .term-container {
+      padding: 20px;
+    }
+    .term-heading {
+      font-size: 2rem;
+    }
+    .term-paragraph {
+      font-size: 1rem;
+    }
+    .term-button {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+  

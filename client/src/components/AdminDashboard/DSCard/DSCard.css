@@ -1,0 +1,37 @@
+/* Card Styling */
+.ant-card {
+  background-color: #d1d1d1; /* Dark background for the card */
+  border-radius: 12px; /* Rounded corners for the card */
+  border: none; /* Remove default border */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+ width: 100%;
+ 
+}
+
+/* Space between icon and statistic */
+.ant-space-horizontal {
+  margin-bottom: 16px; /* Add some spacing below the icon and statistic */
+}
+
+/* Statistic title */
+.ant-statistic-title {
+  color: #ffffff; /* White text for the title */
+}
+
+/* Statistic value */
+.ant-statistic-value {
+  color: #faad14; /* Gold color for the value */
+  font-size: 24px; /* Increase font size for the value */
+}
+
+/* Icon Styling */
+.anticon {
+  color: #faad14; /* Gold color for the icon */
+  font-size: 32px; /* Increase icon size */
+}
+
+/* Hover effect */
+.ant-card:hover {
+  background-color: #3c3c3c; /* Slightly lighter background on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}

@@ -1,0 +1,34 @@
+.card-body {
+    padding: 20px;
+  }
+  
+  .card {
+    
+    /* box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); */
+    
+  }
+  
+  .progress {
+    height: 20px;
+  }
+  
+  .progress-bar {
+    background-color: #007bff;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+  }
+
+  .profile-img-fluid {
+    width: 150px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 50%; /* Maintain circular shape */
+  }
+  
+  .profilebody{
+    margin-top: 150px;
+    margin-bottom: 55px;
+  }

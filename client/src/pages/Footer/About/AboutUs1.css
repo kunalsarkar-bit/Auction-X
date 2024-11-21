@@ -1,0 +1,241 @@
+:root {
+  --primary: rgb(255, 255, 255); /* Changed to white for better contrast */
+  --secondary: rgb(255, 124, 10); /* Retained as is for accent color */
+}
+
+.TEAM-body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(0, 0, 0); /* Added black background */
+}
+
+.TEAM-center {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TEAM-team {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+}
+
+.TEAM-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary); /* Changed to primary for contrast */
+}
+
+.TEAM-profiles {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.TEAM-profile {
+  width: fit-content;
+  height: fit-content;
+  min-width: 350px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding-top: 20px;
+  margin: 20px;
+  max-height: 100px;
+  transition: 0.5s ease-in-out;
+}
+
+.TEAM-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.TEAM-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary); /* Changed to primary for contrast */
+}
+
+.TEAM-details span {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7); /* Slightly lighter for better readability */
+}
+
+.TEAM-card {
+  width: 320px;
+  height: 300px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent for layering */
+  box-sizing: border-box;
+  padding: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--primary); /* Changed to primary for contrast */
+  border-radius: 6mm;
+  position: relative;
+}
+
+.TEAM-head {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: left;
+  margin-bottom: 5px;
+}
+
+.TEAM-head img {
+  margin: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 5mm;
+}
+
+.TEAM-name {
+  font-size: 16px;
+  font-weight: 200;
+  width: fit-content;
+  margin-left: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0 8px;
+  border-radius: 3mm;
+  color: var(--primary); /* Changed to primary for contrast */
+}
+
+.TEAM-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 15px;
+  position: relative;
+  color: var(--primary); /* Changed to primary for contrast */
+}
+
+.TEAM-role {
+  font-weight: 200;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7); /* Slightly lighter for better readability */
+}
+
+.TEAM-icons {
+  backdrop-filter: blur(9px) saturate(180%);
+  -webkit-backdrop-filter: blur(9px) saturate(180%);
+  background: rgba(255, 255, 255, 0.2); /* Changed for better contrast on black */
+  width: 100%;
+  padding: 0 20px;
+  border-radius: 7mm;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.TEAM-content::before {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 70%;
+  background: var(--secondary);
+  width: 60px;
+  height: 30px;
+  filter: blur(30px);
+}
+
+.TEAM-icons a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: var(--primary); /* Changed to primary for contrast */
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.35s;
+}
+
+.TEAM-icons a:hover {
+  background: var(--primary); /* Change background on hover */
+  color: black; /* Change text color on hover for visibility */
+  border-radius: 50%;
+}
+
+.TEAM-card::before {
+  position: absolute;
+  content: ""; /* Remove content text */
+  background-image: url('../../../assets/images/FooterElements/AboutUs/locationpin.png'); /* Set your image path here */
+  background-size: contain; /* Ensures the image fits within the pseudo-element */
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 66px; /* Set width and height to match the image size */
+  height: 76px;
+  top: calc(100% - 7px);
+  left: 50%;
+  transform: translate(-50%, 0) rotate(180deg);
+}
+
+.TEAM-profile:hover {
+  max-height: 500px;
+}
+
+.TEAM-profile:hover #picture {
+  border: 5px solid var(--primary); /* Highlight border */
+}
+
+.TEAM-profile:hover .TEAM-card {
+  display: flex;
+  animation: TEAM-fade 0.5s ease-in-out;
+}
+
+@keyframes TEAM-fade {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+  1%,
+  50% {
+      display: flex;
+      opacity: 0;
+  }
+  100% {
+      display: flex;
+      opacity: 1;
+  }
+}
+
+.TEAM-profile:nth-child(odd) {
+  --primary: rgb(255, 255, 255); /* Changed to white for better contrast */
+  --secondary: rgb(255, 124, 10); /* Retained as is for accent color */
+}
+
+.TEAM-location {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  opacity: 0; /* Start invisible */
+  transition: opacity 0.3s ease;
+  color: var(--primary); /* Changed to primary for contrast */
+}
+
+.TEAM-profile:hover .TEAM-location {
+  opacity: 1; /* Show on hover */
+}

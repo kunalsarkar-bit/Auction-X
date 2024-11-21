@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+.otp-reset * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.otp-body-container {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-size: 100%;
+}
+
+.otp-outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.otp-inner-container {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 13px rgba(255, 223, 150, 0.8),
+              0 0 22px rgba(255, 223, 150, 0.6),
+              0 0 32px rgba(255, 223, 150, 0.4),
+              0 0 42px rgba(255, 223, 150, 0.2);
+  padding: 30px;
+  text-align: center;
+}
+
+.otp-header {
+  margin-bottom: 20px;
+}
+
+.otp-input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.otp-input-box {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 24px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.otp-verify-button, .otp-resend-button {
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  margin: 10px 5px;
+  cursor: pointer;
+}
+
+.otp-verify-button {
+  background: linear-gradient(to right, #99723c 10%, #fae570 40%, #000000 140%);
+}
+
+.otp-resend-button.otp-disabled {
+  background-color: gray;
+}
+
+.otp-resend-button.otp-enabled {
+  background-color: black;
+}
+
+.otp-timer-text {
+  margin-top: 10px;
+  font-size: 12px;
+  color: gray;
+}
+
+.otp-container input[type="number"]::-webkit-inner-spin-button,
+.otp-container input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

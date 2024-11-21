@@ -1,0 +1,256 @@
+/* Input Field Styling */
+input.form-control {
+    padding: 10px;
+    border: none; /* Remove the border */
+    border-radius: 5px;
+    background-color: white; /* Add transparency */
+    font-size: 1.1rem;
+    z-index: 20; /* Ensure input is above the background */
+  }
+  
+  /* Add Money Button Styling */
+  .PAYMENT-btn-success {
+    background: rgba(67, 233, 123, 0.7); /* Add transparency to the button */
+    border: none;
+    color: white;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+    z-index: 20; /* Ensure button is above the background */
+  }
+  
+  .PAYMENT-btn-secondary {
+    background-color: gray; /* Gray background for the disabled state */
+    color: white;
+    cursor: not-allowed; /* Change cursor to indicate not clickable */
+    border-radius: 30px; /* Match the same border-radius */
+    padding: 12px 30px; /* Same padding */
+  }
+  
+  .PAYMENT-btn-success:hover {
+    background: rgba(67, 233, 123, 0.85); /* Slightly less transparent on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Error Message Styling */
+  .error-message {
+    background-color: rgba(255, 0, 0, 0.2); /* Light red background */
+    color: #d8000c; /* Dark red text color */
+    border: 1px solid #d8000c; /* Dark red border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Some padding */
+    display: inline-block; /* Make it an inline block */
+  }
+  
+  /* Other Styles */
+  .payment-page-body {
+    background: black;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    padding-top: 7%;
+  }
+  
+  .payment-page {
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+    z-index: 10;
+  }
+  
+  .available-money {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Slight transparency */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+  }
+  
+  .payment-options-section {
+    position: relative;
+    z-index: 10;
+  }
+  
+  .payment-page::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url('../../../../assets/images/components/Payment/COIN\ IMAGE.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 700px;
+    height: 700px;
+    z-index: -1;
+    opacity: 0.3;
+  }
+  
+  .list-group-item {
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    font-size: 1.1rem;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .list-group-item img {
+    border-radius: 50%;
+  }
+  
+  h2, h3, h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  h5 {
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .mt-4, .mt-3 {
+    margin-top: 1.5rem;
+  }
+  .transparent-icon {
+    background-color: transparent;
+    border: none;
+    color: #000; /* Make sure the ₹ symbol is still visible */
+  }
+  
+  input.form-control {
+    border: 1px solid #ced4da;
+  }
+  
+  .PAYMENT-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+/* Small screens (up to 575px) */
+@media (max-width: 575px) {
+  .PAYMENT-btn-success, .PAYMENT-btn-secondary {
+      padding: 10px 20px; /* Smaller button padding */
+      font-size: 1rem; /* Smaller font size */
+  }
+
+  .payment-page {
+      padding: 20px; /* Reduce padding */
+      box-shadow: none; /* Simplify box-shadow on small screens */
+  }
+
+  .available-money {
+      top: 10px;
+      right: 10px;
+      padding: 8px; /* Smaller padding */
+      font-size: 0.9rem; /* Adjust font size */
+  }
+
+  .payment-page::before {
+      width: 400px; /* Smaller background image */
+      height: 400px;
+  }
+}
+
+/* Medium screens (576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .PAYMENT-btn-success, .PAYMENT-btn-secondary {
+      padding: 10px 25px;
+      font-size: 1.1rem;
+  }
+
+  .payment-page {
+      padding: 25px;
+      box-shadow: 0 0 5px rgba(255, 223, 150, 0.5); /* Softer shadow */
+  }
+
+  .payment-page::before {
+      width: 500px;
+      height: 500px;
+  }
+}
+
+/* Large screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .PAYMENT-btn-success, .PAYMENT-btn-secondary {
+      padding: 12px 28px;
+      font-size: 1.1rem;
+  }
+
+  .payment-page {
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(255, 223, 150, 0.6);
+  }
+
+  .payment-page::before {
+      width: 600px;
+      height: 600px;
+  }
+}
+
+/* Extra large screens (992px and above) */
+@media (min-width: 992px) {
+  .PAYMENT-btn-success, .PAYMENT-btn-secondary {
+      padding: 12px 30px;
+      font-size: 1.2rem;
+  }
+
+  .payment-page {
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(255, 223, 150, 0.7);
+  }
+
+  .payment-page::before {
+      width: 700px;
+      height: 700px;
+  }
+}
+
+/* Extra-extra large screens (1200px and above) */
+@media (min-width: 1200px) {
+  .PAYMENT-container {
+      max-width: 1140px;
+  }
+
+  .payment-page {
+      padding: 50px;
+  }
+
+  .payment-page::before {
+      width: 800px;
+      height: 800px;
+  }
+}
+
+/* Extra-extra-extra large screens (1400px and above) */
+@media (min-width: 1400px) {
+  .PAYMENT-container {
+      max-width: 1320px;
+  }
+
+  .payment-page {
+      padding: 60px;
+  }
+
+  .payment-page::before {
+      width: 900px;
+      height: 900px;
+  }
+}
+

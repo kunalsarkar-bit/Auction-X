@@ -1,0 +1,63 @@
+.piechart-container {
+    background-color: #121212; /* Dark background for the chart container */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Spacing around the chart */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+    max-width: 800px; /* Increase the max width of the chart */
+    max-height: 90vh; /* Increase max height for scrolling */
+    margin: auto; /* Center the chart */
+    overflow-y: auto; /* Enable vertical scrolling for overflow */
+}
+.ant-space-item {
+  width: 100%; /* Ensure it takes full width */
+  max-width: 800px; /* Adjust as needed */
+  margin: 20px auto; /* Center the item and add margin */
+}
+
+
+.piechart-title {
+  color: #ffffff; /* White text for title */
+  font-size: 18px; /* Font size for title */
+  text-align: center; /* Center the title */
+  margin-bottom: 10px; /* Spacing below the title */
+}
+
+/* Ensures the chart fits and has room */
+.piechart-container canvas {
+  height: auto; /* Allow the chart to resize based on container */
+  max-height: 400px; /* Limit chart height for visibility */
+}
+
+/* Legend styling */
+.chartjs-legend {
+  color: #ffffff; /* White text for legend */
+  font-size: 14px; /* Font size for legend */
+  margin-bottom: 10px; /* Spacing below the legend */
+}
+
+/* Ensuring items in the legend fit and are scrollable if necessary */
+.chartjs-legend ul {
+  max-height: 200px; /* Limit legend height */
+  overflow-y: auto; /* Enable scrolling for legend */
+}
+
+@media screen and (max-width: 768px) {
+  .piechart-container {
+      padding: 15px;
+      max-width: 100%;
+  }
+  
+  .piechart-title {
+      font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .piechart-container {
+      padding: 10px;
+  }
+  
+  .piechart-title {
+      font-size: 14px;
+  }
+}

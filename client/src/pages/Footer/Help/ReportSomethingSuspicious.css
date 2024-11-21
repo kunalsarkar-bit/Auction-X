@@ -1,0 +1,73 @@
+/* Unique Container Styling */
+.report-container {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 20px;
+    padding-top: 60px;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 20px auto; /* Center-aligns container */
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column; /* Allows stacking of elements */
+    align-items: center; /* Center-aligns items horizontally */
+  }
+  
+  /* Unique Headings */
+  .report-container h1, 
+  .report-container h3, 
+  .report-container h4 {
+    color: #fdfdfd; /* Gold color for headings */
+    margin-top: 20px;
+    text-align: center; /* Center-align headings */
+  }
+  
+  /* Unique Paragraphs and Anchor Links */
+  .report-container p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center; /* Center-align paragraphs */
+  }
+  
+  .report-container p a {
+    color: #1E90FF; /* Dodger blue for links */
+    text-decoration: underline;
+  }
+  
+  .report-container a:hover {
+    color: #00BFFF; /* Light blue on hover */
+  }
+  
+  /* Unique Lists */
+  .report-container ul {
+    padding-left: 20px; /* Adds padding for bullets */
+    margin-bottom: 1rem;
+    text-align: left; /* Aligns list text to the left */
+  }
+  
+  .report-container ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem; /* Consistent font size */
+  }
+  
+  /* Media Query for Mobile */
+  @media (max-width: 768px) {
+    .report-container {
+      padding: 15px;
+    }
+  
+    .report-container h1 {
+      font-size: 1.8rem;
+    }
+  
+    .report-container h3, 
+    .report-container h4 {
+      font-size: 1.4rem;
+    }
+  
+    .report-container p, 
+    .report-container ul li {
+      font-size: 0.9rem; /* Reduces font size for smaller screens */
+    }
+  }
+  

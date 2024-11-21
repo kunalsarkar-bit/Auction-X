@@ -1,0 +1,227 @@
+/* Footer general styles */
+.footer {
+  background-color: black;
+  color: white;
+  padding: 40px;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  /* border-radius: 15px; */
+  box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+}
+
+.footer:hover {
+  box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+}
+
+/* Parallax effect */
+.parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.parallax-trees,
+.parallax-moto,
+.parallax-second,
+.parallax-premier,
+.parallax-car {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Flexbox layout for container and responsiveness */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo-slogan {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  width: 220px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.slogan {
+  font-size: 1.2rem;
+  color: #f1c40f;
+  font-weight: 600;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px 0;
+}
+
+/* Align columns with equal spacing */
+.footer-column {
+  flex: 1;
+  padding: 0 20px;
+  text-align: left;
+  margin-right: 20px; /* Reduced margin */
+}
+
+.footer-column:last-child {
+  margin-right: 0; /* Remove margin for the last column */
+}
+
+/* Center the headings in their columns */
+.footer-title {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #f1c40f;
+  border-bottom: 2px solid #f1c40f;
+  padding-bottom: 5px;
+  text-align: center; /* Centered headings */
+}
+
+/* Lists styling */
+.footer-nav-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav-item {
+  margin-bottom: 10px; /* Space between items */
+}
+
+.footer-nav-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-nav-link:hover {
+  color: #f1c40f;
+}
+
+.footer-copyrights {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-copyrights a {
+  color: #f1c40f;
+  text-decoration: none;
+}
+
+.footer-copyrights a:hover {
+  color: #fff;
+}
+
+/* Image links styling */
+.footer__image-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer__logo-image {
+  width: 50px;
+  height: auto;
+  cursor: pointer;
+  margin: 0 10px;
+  border-radius: 50%;
+  transition: 0.5s;
+  background: rgba(0, 0, 0, 0); /* Transparent background */
+  -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+
+.footer-logo {
+  transition: transform 0.2s ease, filter 0.2s ease;
+  /* Smooth transition for both properties */
+}
+
+.footer-logo:hover {
+  transform: scale(1.1);
+  /* Slightly enlarge the logo */
+
+  filter: drop-shadow(0 0 10px rgba(255, 223, 150, 0.8)) /* Inner glow with gold tint */
+        drop-shadow(0 0 20px rgba(255, 223, 150, 0.6)) /* Outer glow for depth */
+        drop-shadow(0 0 30px rgba(255, 223, 150, 0.4)) /* Larger, softer glow */
+        drop-shadow(0 0 40px rgba(255, 223, 150, 0.2)); /* Soft fading outermost glow */
+
+}
+
+
+.footer__icon:hover .footer__logo-image {
+  background: var(--color);
+  box-shadow: 0 0 5px var(--color), 0 0 25px var(--color), 0 0 50px var(--color), 0 0 200px var(--color);
+}
+
+.footer__icon.github { --color: #333; }
+.footer__icon.linkedin { --color: #0072b1; }
+.footer__icon.facebook { --color: #426782; }
+.footer__icon.instagram { --color: #E1306C; }
+.footer__icon.x { --color: #1DA1F2; }
+
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column {
+    text-align: center;
+    padding: 10px 0;
+    margin-right: 0; /* Remove margin on smaller screens */
+  }
+
+  .footer-logo {
+    width: 60px;
+  }
+
+  .slogan {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .footer-title {
+    font-size: 1.2rem;
+  }
+
+  .slogan {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,44 @@
+/* SafeAndSecureShopping.css */
+
+.safe-secure-container {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  padding-top:80px ;
+  border-radius: 10px;
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center align text */
+}
+.safe-secure-container h1,
+.safe-secure-container h3 {
+  color: #ffffff;
+}
+
+.safe-secure-container h3 {
+  margin-top: 20px;
+}
+
+.safe-secure-container a {
+  color: #1E90FF;
+}
+
+.safe-secure-container a:hover {
+  text-decoration: underline;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+  .safe-secure-container {
+    padding: 15px;
+  }
+
+  .safe-secure-container h1 {
+    font-size: 24px;
+  }
+
+  .safe-secure-container h3 {
+    font-size: 20px;
+  }
+}

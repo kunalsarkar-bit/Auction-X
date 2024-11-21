@@ -1,0 +1,190 @@
+.Product-body {
+  width: 100%;
+  border-radius: 16px;
+  font-family: Arial, sans-serif;
+  color: #e0e0e0;
+
+  /* Gradient and background effect */
+  /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)) !important; */
+  background: black;
+  /* Blur effect */
+ 
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  backdrop-filter: blur(10px);
+  /* Rounded corners */
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  /* Neon glow shadow */
+  box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+}
+
+.Product-body:hover {
+  box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+}
+
+.Product-container {
+  width: 100%;
+  display: flex;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow-y: auto;
+  max-height: 180vh;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(70, 70, 70, 1) rgba(30, 30, 30, 0.9);
+}
+
+.product-item {
+  width: 18%;
+  height: 380px;
+  margin: 2%;
+  padding: 20px;
+  margin-top: 46px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-item:hover {
+  transform: scale(1.03);
+  box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+}
+
+.product-item img {
+  width: 100%;
+  height: 150px; /* Set your desired height */
+  object-fit: cover; /* This will crop the image to fit */
+  border-radius: 8px;
+}
+
+
+
+.product-item h3 {
+  text-align: center;
+  margin: 10px 0;
+  color: #ffffff;
+  font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.product-item h4 {
+  text-align: center;
+  margin: 10px 0;
+  color: #b0b0b0;
+  font-size: 0.9em;
+}
+
+.product-btn-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.product-btn-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(70, 70, 70, 0.9);
+  color: #e0e0e0;
+  font-size: medium;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.product-btn-box button:hover {
+  background-color: rgba(100, 100, 100, 1);
+  transform: scale(1.05);
+}
+
+
+
+/* Responsive styles */
+@media screen and (max-width: 800px) {
+  .product-item {
+    width: 32%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .product-item {
+    width: 56%;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.loading-spinner {
+  border: 8px solid rgba(70, 70, 70, 0.9);
+  border-top: 8px solid rgba(100, 100, 100, 1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom scrollbar styles */
+.Product-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.Product-container::-webkit-scrollbar-track {
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 10px;
+}
+
+.Product-container::-webkit-scrollbar-thumb {
+  background: rgba(70, 70, 70, 1);
+  border-radius: 10px;
+}
+
+.Product-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 100, 1);
+}
+

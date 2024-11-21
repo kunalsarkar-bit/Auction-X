@@ -1,0 +1,60 @@
+/* Main container styling */
+.shipping-page .shipping-container {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 20px;
+  margin-top: 80px;
+  border-radius: 5px;
+  max-width: 800px; /* Limits the width for better readability */
+  margin-left: auto; /* Center-aligns container horizontally */
+  margin-right: auto;
+  text-align: left; /* Aligns text to the left */
+}
+
+/* Heading colors */
+.shipping-page .shipping-container h1,
+.shipping-page .shipping-container h3 {
+  color: #ffffff; /* Gold color */
+  text-align: center; /* Center-aligns headings */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 80px;
+}
+
+/* Paragraph and list styling */
+.shipping-page .shipping-container p,
+.shipping-page .shipping-container ul {
+  margin-bottom: 1rem;
+  font-size: 1rem; /* Consistent font size */
+  line-height: 1.6; /* Improves readability */
+}
+
+.shipping-page .shipping-container ul {
+  padding-left: 20px; /* Adds padding for bullets */
+  list-style: disc; /* Displays bullet points */
+}
+
+.shipping-page .shipping-container ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Media query for mobile */
+@media (max-width: 768px) {
+  .shipping-page .shipping-container {
+    padding: 15px;
+  }
+  
+  .shipping-page .shipping-container h1 {
+    font-size: 1.8rem;
+  }
+  
+  .shipping-page .shipping-container h3 {
+    font-size: 1.4rem;
+  }
+  
+  .shipping-page .shipping-container p,
+  .shipping-page .shipping-container ul li {
+    font-size: 0.9rem; /* Reduces font size for mobile */
+  }
+}
+

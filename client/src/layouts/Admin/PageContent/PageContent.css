@@ -1,0 +1,25 @@
+/* Page Content Styles */
+.pgcontent {
+    padding: 10px; /* Default padding */
+    margin: 40px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .pgcontent {
+        padding: 8px; /* Slightly reduce padding on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .pgcontent {
+        padding: 5px; /* Further reduce padding on very small screens */
+    }
+}
+
+/* Optional: Styles for larger screens */
+@media (min-width: 769px) {
+    .pgcontent {
+        padding: 15px; /* Increase padding on larger screens for better spacing */
+    }
+}

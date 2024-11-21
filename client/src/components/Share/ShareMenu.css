@@ -1,0 +1,121 @@
+.SHAREDMENU-body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.SHAREDMENU-center {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    box-sizing: border-box;
+}
+
+.SHAREDMENU-share-menu {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    margin-bottom: 7%;
+    z-index: 1000; /* Ensure menu items are above other elements */
+}
+
+.SHAREDMENU-menu-list {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 55px;
+    box-sizing: border-box;
+    border: 0.4mm solid rgb(255, 255, 255); /* White border for contrast */
+    padding: 15px;
+    border-radius: 20mm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: hidden;
+    transition: 0.35s ease-in-out;
+    max-height: 300px;
+    background-color: black; /* Slight background for contrast */
+    z-index: 1000; /* Ensure menu items are above other elements */
+}
+
+.SHAREDMENU-item {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 30px; /* Adjusted font size for better spacing */
+    position: relative;
+    margin: 6px 0;
+    cursor: pointer;
+    color: white; /* White icons for better visibility */
+}
+
+.SHAREDMENU-item::before {
+    position: absolute;
+    content: "";
+    width: 34px;
+    height: 34px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+#SHAREDMENU-toggle {
+    display: none;
+}
+
+#SHAREDMENU-toggle + label {
+    width: 55px;
+    height: 55px;
+    position: relative;
+    display: block;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#SHAREDMENU-toggle + label::before {
+    position: absolute;
+    content: "";
+    width: 55px;
+    height: 55px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 55px;
+    box-shadow: rgba(80, 80, 80, 0.5) 0px 20px 30px -10px;
+    background-image: url('../../assets/images/components/Share/share.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+}
+
+#SHAREDMENU-toggle:not(:checked) ~ .SHAREDMENU-menu-list {
+    padding: 0;
+    border: 0;
+    max-height: 0;
+}
+
+#SHAREDMENU-toggle:checked + label::before {
+    content: "";
+    background-image: url('../../assets/images/components/Share/cross.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+}
+
+.SHAREDMENU-item a {
+    color: inherit; /* Inherits the color from the parent, you can set a custom color here */
+    text-decoration: none; /* Removes the underline */
+  }
+  
+  .SHAREDMENU-item a:hover {
+    color: inherit; /* Ensures the color stays the same on hover */
+    text-decoration: none; /* Keeps no underline on hover */
+  }
+  

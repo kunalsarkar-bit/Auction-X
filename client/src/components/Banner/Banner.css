@@ -1,0 +1,70 @@
+.wide-card {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Set the width to 90% */
+    max-width: 2000px; /* Max width for larger screens */
+    margin: auto; /* Center the card */
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Remove extra padding */
+    border: none;
+    
+}
+
+.wide-card:hover {
+    box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+  }
+
+.wide-card-item {
+    display: none; /* Hide all items by default */
+    opacity: 0; /* Start hidden */
+    transform: translateX(100%); /* Start off-screen to the right */
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth slide in from right */
+    width: 100%; /* Set width of the card item to fill the card */
+    height: auto; /* Allow the image to define the height */
+}
+
+.wide-card-item.active {
+    display: block; /* Show the active item */
+    opacity: 1; /* Fade in the active item */
+    transform: translateX(0); /* Slide into place */
+}
+
+.wide-card-item img {
+    width: 100%; /* Full width for image */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover ; /* Ensure the image fills the space without distortion */
+    max-height: 450px; /* Limit the height of the image to avoid it being too large */
+    border-radius: 10px; /* Rounded corners for the image */
+    image-rendering: auto; /* Ensures proper rendering */
+}
+
+.BANNERnavigation {
+    position: absolute;
+    bottom: 10px; /* Position the navigation dots at the bottom of the card */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px; /* Space between dots */
+    justify-content: center;
+    align-items: center;
+}
+
+.dot {
+    height: 10px; /* Dot height */
+    width: 10px; /* Dot width */
+    margin: 0 5px; /* Space between dots */
+    border-radius: 50%; /* Round dots */
+    background-color: #bbb; /* Default dot color */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.dot.active {
+    background-color: #717171; /* Active dot color */
+}

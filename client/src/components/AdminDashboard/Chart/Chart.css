@@ -1,0 +1,65 @@
+.chartshow {
+    background-color: #121212; /* Dark background for the chart container */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Spacing around the chart */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+    max-width: 600px; /* Limit the width of the chart */
+    margin: auto; /* Center the chart */
+    min-height: 200px;
+  }
+  
+  .chartshow canvas {
+    border-radius: 8px; /* Match the container's rounded corners */
+  }
+  
+  /* Customize Chart.js styles */
+  .chartjs-render-monitor {
+    background-color: rgba(18, 18, 18, 0.8); /* Chart background */
+  }
+  
+  .chartjs-tooltip {
+    background-color: #333; /* Dark background for tooltips */
+    color: #fff; /* White text color */
+    border-radius: 4px; /* Rounded corners for tooltips */
+    padding: 8px; /* Padding inside the tooltip */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for tooltips */
+  }
+  
+  /* Style for chart legend */
+  .chartjs-legend {
+    color: #ffffff; /* White text for legend */
+    font-size: 14px; /* Font size for legend */
+  }
+  
+  /* Style for chart title */
+  .chartjs-title {
+    color: #ffffff; /* White text for title */
+    font-size: 18px; /* Font size for title */
+    margin-bottom: 10px; /* Spacing below the title */
+  }
+  
+  .chartshow {
+    background-color: #121212;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    margin: auto;
+}
+
+.chartshow canvas {
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+    .chartshow {
+        padding: 15px;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .chartshow {
+        padding: 10px;
+    }
+}

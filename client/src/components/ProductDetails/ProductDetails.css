@@ -1,0 +1,83 @@
+/* Styling for carousel images */
+.carousel-item img {
+  height: 400px; /* Set a consistent height for the container */
+  object-fit: contain; /* Ensure the image shrinks to fit the container without being cropped */
+  width: 100%; /* Full width within the container */
+  background-color: white; /* White background for any empty space */
+}
+
+/* Styling for thumbnail images */
+.thumbnail-image {
+  width: 110px; /* Keep thumbnail width fixed */
+  height: 75px; /* Keep thumbnail height fixed */
+  object-fit: cover; /* Maintain aspect ratio for thumbnails */
+  border-radius: 5px; /* Optional: Rounded corners */
+}
+
+/* Styling for the thumbnail container */
+.thumbnail-col {
+  padding: 0 1px; /* Reduced padding for even tighter spacing */
+  margin: 0; /* Keep margin at zero to maintain tight spacing */
+}
+
+/* Styling for the row of thumbnails */
+.thumbnail-row {
+  margin-bottom: 0; /* Reducing the bottom margin to close the gap */
+}
+
+/* Styling for the card containing the bid input form */
+.card .form-group {
+  margin-bottom: 15px; /* Ensures proper spacing within the form */
+}
+
+/* Styling for alerts */
+.alert {
+  text-align: center; /* Center the text in the alert */
+  font-weight: bold; /* Make the alert text bold */
+}
+
+/* Center the bid button image */
+.image_adjust {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* This will center the image horizontally */
+}
+
+
+/* Optional: Card body description styling */
+.card-body.description {
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 20px; /* Adjust padding for better spacing */
+}
+
+.ProductDetails-fa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  background-color: wheat;
+  border-radius: 50%;
+  width: 150px; /* Set width for button size */
+  height: 150px; /* Set height for button size */
+  cursor: pointer; /* Makes it appear clickable */
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover effect */
+.ProductDetails-fa:hover {
+  background-color: #f5c278; /* Darker shade for hover effect */
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Active effect */
+.ProductDetails-fa:active {
+  transform: scale(0.95); /* Slight shrink on click */
+}
+
+.winning-alert {
+  font-family: 'Poppins', sans-serif;
+  border: 3px solid #fae570; /* A gold border */
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Glowing effect */
+}

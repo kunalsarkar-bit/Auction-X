@@ -1,0 +1,20 @@
+/* This targets all number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.sellan-container {
+  box-shadow: 
+        0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow */
+        0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow */
+        0 0 30px rgba(255, 223, 150, 0.4); /* Larger, softer glow */
+  width: 100%;
+  max-width: 1200px; /* Adjust this value based on your design */
+  margin: 0 auto; /* Center the container */
+
+}
+.sellan-body{
+margin-top: 105px;
+}

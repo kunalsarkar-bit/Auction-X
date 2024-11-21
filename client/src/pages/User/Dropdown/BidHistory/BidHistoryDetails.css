@@ -1,0 +1,124 @@
+.BidHistoryDetails-container {
+   
+  width: 90%;
+  height: 60;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+    margin-top: 8%;
+    margin-bottom: 2%;
+  }
+/*   
+  .BidHistoryDetails-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .BidHistoryDetails-card {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+  }
+  
+  .BidHistoryDetails-heading {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .BidHistoryDetails-address p {
+    margin: 0.5rem 0;
+    color: #555;
+  }
+  
+  .BidHistoryDetails-image-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .BidHistoryDetails-image {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .BidHistoryDetails-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .BidHistoryDetails-moreActions {
+    text-align: center;
+  }
+  
+  .BidHistoryDetails-btn-warning {
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .BidHistoryDetails-btn-warning:hover {
+    background-color: #ffb300;
+  }
+  
+  .BidHistoryDetails-orderDetails {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .BidHistoryDetails-orderText {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  
+  .BidHistoryDetails-detailsFooter {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  .BidHistoryDetails-noReturn {
+    color: #888;
+  }
+  
+  .BidHistoryDetails-btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .BidHistoryDetails-btn-primary:hover {
+    background-color: #0069d9;
+  }
+  
+  .BidHistoryDetails-btn-outline-secondary {
+    border: 1px solid #6c757d;
+    color: #6c757d;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .BidHistoryDetails-btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+  }
+   */

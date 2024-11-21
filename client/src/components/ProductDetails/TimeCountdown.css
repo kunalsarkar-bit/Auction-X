@@ -1,0 +1,70 @@
+.timer {
+  text-align: center;
+  color: #333;
+  margin-bottom: 4%;
+}
+
+.timer h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.timer__boxes {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.timer__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem;
+  border: 1.5px solid #333;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  min-width: 70px;
+}
+
+.timer__number {
+  font-size: 1.75rem;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.timer__label {
+  font-size: 0.75rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #666;
+  margin: 0;
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 600px) {
+  .timer h2 {
+    font-size: 1rem; /* Reduce font size for smaller screens */
+    margin-bottom: 0.5rem;
+  }
+  
+  .timer__boxes {
+    gap: 0.5rem; /* Less space between boxes */
+    flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
+  }
+  
+  .timer__box {
+    padding: 0.5rem; /* Reduce padding inside the box */
+    min-width: 60px; /* Reduce width of each box */
+  }
+  
+  .timer__number {
+    font-size: 1.5rem; /* Reduce number font size */
+    margin-bottom: 0.3rem;
+  }
+  
+  .timer__label {
+    font-size: 0.65rem; /* Reduce label font size */
+  }
+}

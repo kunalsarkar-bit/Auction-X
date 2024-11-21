@@ -1,0 +1,49 @@
+.savingzone-carousel-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: relative;
+    max-width: 2000px;
+    margin: auto; 
+    border-radius: 14px;
+    padding: 0; 
+    border: none;   
+}
+
+.savingzone-carousel {
+    display: flex;
+    animation: savingzone-scroll 40s linear infinite; /* Adjust total duration */
+}
+
+
+.savingzone-carousel-item {
+    flex: 0 0 500px;
+    margin-right: 20px;
+}
+
+.savingzone-promo-image {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframes with pauses at each image */
+@keyframes savingzone-scroll {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(0); }
+    15% { transform: translateX(-520px); }
+    25% { transform: translateX(-520px); }
+    30% { transform: translateX(-1040px); }
+    40% { transform: translateX(-1040px); }
+    45% { transform: translateX(-1560px); }
+    55% { transform: translateX(-1560px); }
+    60% { transform: translateX(-2080px); }
+    70% { transform: translateX(-2080px); }
+    75% { transform: translateX(-2600px); }
+    85% { transform: translateX(-2600px); }
+    100% { transform: translateX(-3120px); }
+}

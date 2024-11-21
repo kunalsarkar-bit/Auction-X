@@ -1,0 +1,91 @@
+/* General styles */
+body {
+    background-color: black !important; 
+    color: white; /* White text for contrast */
+    font-family: 'Arial', sans-serif; /* Change to your preferred font */
+    margin: 0; /* Remove default margin */
+}
+
+/* Header styles */
+h1, h2, p {
+    margin: 0;
+    padding: 10px 0;
+}
+
+/* Section styles */
+section {
+    margin-bottom: 20px; /* Space between sections */
+}
+
+/* List styles for news */
+ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin: 5px 0; /* Space between list items */
+    border-radius: 4px; /* Rounded corners for list items */
+}
+
+/* Links */
+a {
+    color: #f0c14b; /* Gold color for links */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Neon Border Styles */
+.neon-border  {
+    position: relative;
+    padding: 2px; /* Adjust padding to fit the content */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure no overflow */
+    box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+}
+
+.neon-border::after, .neon-border::before {
+    content: '';
+    position: absolute;
+    height: 100%; /* Set height to 100% of the element */
+    width: 100%; /* Set width to 100% of the element */
+    background: #000; /* Static neon cyan background */
+    top: 0; 
+    left: 0; 
+    z-index: -1; /* Ensure it stays behind the content */
+    border-radius: 12px; /* Keep the border radius slightly larger */
+}
+
+.neon-border::before {
+    filter: blur(2.5rem); /* Maintain blur for glow */
+    opacity: 0.8; /* Adjusted opacity */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+.SpanTag {
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.SpanTag:hover {
+  color: #ffd700;
+  text-shadow: 
+  0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+  0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+  0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+  0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+}
