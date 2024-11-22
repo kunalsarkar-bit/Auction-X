@@ -24,26 +24,6 @@
     0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
 }
 
-/* Parallax effect */
-.parallax {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.parallax-trees,
-.parallax-moto,
-.parallax-second,
-.parallax-premier,
-.parallax-car {
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 /* Flexbox layout for container and responsiveness */
 .footer-container {
   display: flex;
@@ -197,6 +177,19 @@
     align-items: center;
   }
 
+  .footer-nav-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+  nav .footer-nav-list{
+    display:list-item;
+    text-align: center;
+    list-style: none;
+    margin-right: 17%;
+  }
+  
+
   .footer-column {
     text-align: center;
     padding: 10px 0;
@@ -209,6 +202,25 @@
 
   .slogan {
     font-size: 1rem;
+  }
+
+    .footer-columns {
+    flex-direction: column;
+  }
+
+  .footer-column {
+    margin-bottom: 20px;
+  }
+
+  .footer-title {
+    font-size: 1.1rem;
+    padding: 10px;
+    background-color: #000;
+    border-radius: 5px;
+  }
+
+  .footer-nav.show {
+    display: block;
   }
 }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css"; // Import the CSS specific to the footer
 import companylogo from "../../assets/images/Layouts/AutionX.png";
@@ -10,15 +10,15 @@ import githublogo from "../../assets/images/Layouts/github-logo.png";
 import LogoSlider from "../../pages/Footer/LogoSlider";
 
 const Footer = () => {
+   const [activeSection, setActiveSection] = useState(null);
+
+  const toggleSection = (section) => {
+    setActiveSection(activeSection === section ? null : section);
+  };
+
+  const isMobileView = window.innerWidth <= 768; // Example breakpoint for phone mode
   return (
     <footer className="footer">
-      <div className="parallax">
-        <div className="parallax-trees"></div>
-        <div className="parallax-moto"></div>
-        <div className="parallax-second"></div>
-        <div className="parallax-premier"></div>
-        <div className="parallax-car"></div>
-      </div>
       <div className="footer-container">
         <div>
           <LogoSlider />
@@ -30,11 +30,21 @@ const Footer = () => {
           <span className="slogan">Place your first bid now!!</span>
         </div>
         <div className="footer-columns">
+          {/* About Section */}
           <div className="footer-column">
-            <h3 className="footer-title">
+            <h3
+              className={`footer-title ${
+                activeSection === "about" ? "active" : ""
+              }`}
+              onClick={() => isMobileView && toggleSection("about")}
+            >
               <span>About</span>
             </h3>
-            <nav className="footer-nav">
+            <nav
+              className={`footer-nav ${
+                activeSection === "about" || !isMobileView ? "show" : ""
+              }`}
+            >
               <ul className="footer-nav-list">
                 <li className="footer-nav-item">
                   <Link to="/contact" className="footer-nav-link">
@@ -55,11 +65,21 @@ const Footer = () => {
             </nav>
           </div>
 
+          {/* Consumer Policy Section */}
           <div className="footer-column">
-            <h3 className="footer-title">
+            <h3
+              className={`footer-title ${
+                activeSection === "consumer" ? "active" : ""
+              }`}
+              onClick={() => isMobileView && toggleSection("consumer")}
+            >
               <span>Consumer Policy</span>
             </h3>
-            <nav className="footer-nav">
+            <nav
+              className={`footer-nav ${
+                activeSection === "consumer" || !isMobileView ? "show" : ""
+              }`}
+            >
               <ul className="footer-nav-list">
                 <li className="footer-nav-item">
                   <Link to="/terms" className="footer-nav-link">
@@ -80,30 +100,40 @@ const Footer = () => {
             </nav>
           </div>
 
+          {/* HELP Section */}
           <div className="footer-column">
-            <h3 className="footer-title">
+            <h3
+              className={`footer-title ${
+                activeSection === "help" ? "active" : ""
+              }`}
+              onClick={() => isMobileView && toggleSection("help")}
+            >
               <span>HELP</span>
             </h3>
-            <nav className="footer-nav">
-              <ul className="footer-nav-list">
+            <nav
+              className={`footer-nav ${
+                activeSection === "help" || !isMobileView ? "show" : ""
+              }`}
+            >
+              <ul className="footer-nav-list footer-help">
                 <li className="footer-nav-item">
                   <Link to="/payment" className="footer-nav-link">
-                    <span>Payment</span>
+                    Payment
                   </Link>
                 </li>
                 <li className="footer-nav-item">
                   <Link to="/shipping" className="footer-nav-link">
-                    <span>Shipping</span>
+                    Shipping
                   </Link>
                 </li>
                 <li className="footer-nav-item">
                   <Link to="/report" className="footer-nav-link">
-                    <span>Reports</span>
+                    Reports
                   </Link>
                 </li>
                 <li className="footer-nav-item">
                   <Link to="/faq" className="footer-nav-link">
-                    <span>FAQ</span>
+                    FAQ
                   </Link>
                 </li>
               </ul>
