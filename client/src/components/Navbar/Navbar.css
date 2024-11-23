@@ -47,7 +47,6 @@ header {
   /* Rounded corners */
   margin-bottom: 20px;
   /* Margin below header */
-  border-top: 1px solid #ccc;
   /* Border at the top */
   border-bottom: 1px solid #ccc;
   /* Border at the bottom */
@@ -379,22 +378,10 @@ nav ul li button:hover {
   background-color: #000;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 
-    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
-    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
-    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
-    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+  
   transition: right 0.3s ease;
   /* Smooth slide transition */
   z-index: 999;
-}
-
-.sidebar:hover {
-  box-shadow: 
-    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
-    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
-    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
-    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
 }
 
 

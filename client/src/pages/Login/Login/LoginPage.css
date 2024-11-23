@@ -247,49 +247,102 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .LOGIN-body {
-        height: 100%; /* Adjust height for better layout */
-        padding: 20px; /* Add padding for smaller screens */
+        height: 100vh; /* Adjust height for better layout */
+        width: 100%;
         align-items: center;
     }
 
+    .LOGIN-container form{
+        padding: 0;
+        width: 60%;
+    }
+
+    .sign-in{
+    left: unset;
+    width: 70%;
+    z-index: 2;
+}
+
+    .sign-up{
+    left: unset;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
     .LOGIN-container {
         max-width: 380px;
-        width: 380px; 
-        min-height: 500px; 
+        width: 350px; 
+        min-height: 280px; 
         padding: 20px; /* Ensure there is padding */
     }
 
-    .LOGIN-container p,
-    .LOGIN-container span,
-    .LOGIN-container a {
-        font-size: 0.9em; /* Responsive font size */
+    .LOGIN-container.active .sign-up{
+        width: 55%;
+        margin-right: 4%;
+        transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+    }
+
+
+    .LOGIN-toggle-left{
+    transform: translateX(-200%);
+}
+
+.LOGIN-container.active .LOGIN-toggle-left{
+    transform: translateX(0);
+}
+
+    .LOGIN-container p
+     {
+        font-size: 12px;
         text-align: center; /* Center text for better layout */
+        margin-right: 7%;
+    }
+
+    .LOGIN-container a,
+    .LOGIN-container span{
+        font-size: 9px;
+    }
+
+    .LOGIN-container h1{
+        font-size: 15px;
     }
 
     .LOGIN-container button {
-        font-size: 0.9em; /* Responsive button font */
-        padding: 8px; /* Adjust padding for smaller buttons */
+        font-size: 9px; /* Responsive button font */
+        padding: 4px; /* Adjust padding for smaller buttons */
+        height: 30px; /* Ensure there is padding */
     }
 
     .LOGIN-container input {
-        font-size: 0.9em; /* Responsive input font size */
-        padding: 8px; /* Adjust padding for inputs */
+        font-size: 9px; 
+        padding: 8px; 
+        width: 100%;
+        height: 25px;
     }
+
+ 
 
     .LOGIN-toggle-panel {
         flex-direction: column; /* Stack toggle panel items vertically */
         align-items: center; /* Center items in column layout */
+        
     }
 
     .LOGIN-toggle-container {
-        width: 70%; /* Full width for toggle container */
+        width: 50%; /* Full width for toggle container */
         border-radius: 15px; /* Rounded corners for aesthetics */
+        margin-right: 10%;
     }
+
 
     .LOGIN-social-icons {
         flex-direction: row; /* Ensure icons are in a row */
-        justify-content: center; /* Center social icons */
-        margin: 10px 0; /* Spacing around icons */
+        width: 100%;
+         height: 30px;
     }
 
     .LOGIN-social-icons a {
@@ -298,57 +351,3 @@
         height: 35px; /* Set a consistent height for icons */
     }
 }/* Responsive Adjustments */
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .LOGIN-body {
-        height: 100%; /* Adjust height for better layout */
-        padding: 20px; /* Add padding for smaller screens */
-        align-items: center;
-    }
-
-    .LOGIN-container {
-        max-width: 380px;
-        width: 380px; 
-        min-height: 500px; 
-        padding: 20px; /* Ensure there is padding */
-    }
-
-    .LOGIN-container p,
-    .LOGIN-container span,
-    .LOGIN-container a {
-        font-size: 0.9em; /* Responsive font size */
-        text-align: center; /* Center text for better layout */
-    }
-
-    .LOGIN-container button {
-        font-size: 0.9em; /* Responsive button font */
-        padding: 8px; /* Adjust padding for smaller buttons */
-    }
-
-    .LOGIN-container input {
-        font-size: 0.9em; /* Responsive input font size */
-        padding: 8px; /* Adjust padding for inputs */
-    }
-
-    .LOGIN-toggle-panel {
-        flex-direction: column; /* Stack toggle panel items vertically */
-        align-items: center; /* Center items in column layout */
-    }
-
-    .LOGIN-toggle-container {
-        width: 70%; /* Full width for toggle container */
-        border-radius: 15px; /* Rounded corners for aesthetics */
-    }
-
-    .LOGIN-social-icons {
-        flex-direction: row; /* Ensure icons are in a row */
-        justify-content: center; /* Center social icons */
-        margin: 10px 0; /* Spacing around icons */
-    }
-
-    .LOGIN-social-icons a {
-        margin: 5px; /* Reduced margin between social icons */
-        width: 35px; /* Set a consistent width for icons */
-        height: 35px; /* Set a consistent height for icons */
-    }
-}

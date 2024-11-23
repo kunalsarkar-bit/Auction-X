@@ -85,3 +85,38 @@
   50% { opacity: 0.7; }
   100% { opacity: 1; }
 }
+
+/* Media query for small devices (e.g., phones) */
+@media (max-width: 768px) {
+
+
+  @keyframes ENTRY-zoomIn {
+    from { transform: scale(1); }
+    to { transform: scale(300); } /* Smaller scale for smaller screens */
+  }
+
+  .ENTRY-break {
+    gap: 5px; /* Reduce gap for compact layout */
+  }
+}
+
+/* Media query for extra-small devices (e.g., very small phones) */
+@media (max-width: 480px) {
+
+  .ENTRY-piece {
+    font-size: 1.5rem; /* Match loader font size */
+  }
+
+  .ENTRY-zoom {
+    font-size: 1.5rem; /* Adjust zoom font size */
+  }
+
+  @keyframes ENTRY-zoomIn {
+    from { transform: scale(1); }
+    to { transform: scale(200); } /* Even smaller scale for tiny screens */
+  }
+
+  .ENTRY-break {
+    gap: 3px; /* Minimal gap for compact layout */
+  }
+}
