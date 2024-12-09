@@ -35,3 +35,46 @@
   background-color: #3c3c3c; /* Slightly lighter background on hover */
   transition: background-color 0.3s; /* Smooth transition */
 }
+
+/* For tablets and smaller devices (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .ant-card {
+    width: 90%;               /* Adjust width for smaller screens */
+    padding: 16px;            /* Add some padding */
+    border-radius: 10px;      /* Slightly smaller corners */
+  }
+
+  .ant-statistic-value {
+    font-size: 20px;          /* Reduce value font size */
+  }
+
+  .anticon {
+    font-size: 28px;          /* Smaller icon size */
+  }
+}
+
+/* For phones and very small screens (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .ant-card {
+    width: 100%;              /* Full width on phones */
+    padding: 12px;            /* Reduced padding */
+    border-radius: 8px;       /* More rounded corners */
+  }
+
+  .ant-statistic-value {
+    font-size: 18px;          /* Further reduce font size */
+  }
+
+  .ant-statistic-title {
+    font-size: 14px;          /* Smaller title size */
+  }
+
+  .ant-space-horizontal {
+    margin-bottom: 12px;      /* Reduce margin for tighter layout */
+    margin-left: 3%;
+  }
+
+  .anticon {
+    font-size: 24px;          /* Smaller icon size */
+  }
+}

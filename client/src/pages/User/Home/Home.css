@@ -82,7 +82,6 @@ a:hover {
 }
 
 .SpanTag:hover {
-  color: black;
   text-shadow: 
   0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
   0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */

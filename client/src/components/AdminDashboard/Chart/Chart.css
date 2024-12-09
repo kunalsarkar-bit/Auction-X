@@ -58,8 +58,24 @@
     }
 }
 
+/* Media Query for Tablets and Smaller Devices (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .chartshow {
+    padding: 15px;  /* Reduce padding */
+    max-width: 90%; /* Fit the screen better */
+  }
+}
+
+/* Media Query for Phones and Extra Small Screens (max-width: 480px) */
 @media screen and (max-width: 480px) {
-    .chartshow {
-        padding: 10px;
-    }
+  .chartshow {
+    padding: 10px; /* Minimal padding */
+    max-width: 100%; /* Full width on phones */
+    margin: 0 auto;  /* Center the chart */
+  }
+
+  .chartshow canvas {
+    width: 100% !important;  /* Stretch the chart */
+    max-height: 300px !important; /* Limit height for smaller phones */
+  }
 }

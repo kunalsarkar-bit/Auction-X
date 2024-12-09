@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 /* Grid row and columns */
@@ -12,6 +13,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px; /* Added spacing between columns */
+ 
 }
 
 /* Card styling */
@@ -78,14 +80,20 @@
 /* Popup content box with increased width and two-column layout */
 .carDetails-popup-content {
   display: flex;
-  background-color: #fff;
+  background: rgba(255, 255, 255, 0); /* Fully transparent */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  color: white;
   border-radius: 18px;
   padding: 40px;
   width: 90%;
   height: 80%;
   max-width: 1200px;
   overflow-y: auto;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.2),  /* Subtle outer shadow */
+    0 6px 20px rgba(0, 0, 0, 0.3), /* Deeper shadow for emphasis */
+    inset 0 0 8px rgba(255, 255, 255, 0.5); /* Inner glow */
   transition: transform 0.1s ease, opacity 0.1s ease;
   position: relative;
   transform: scale(0.9);
@@ -93,11 +101,18 @@
   animation: popupIn 0.1s forwards;
 }
 
+
 /* Left column for car details */
 .carDetails-popup-content-left {
   flex: 1;
   padding-right: 20px;
   text-align: left;
+}
+
+
+/* Left column for car details */
+.carDetails-popup-content-left h2 .timer{
+  color: white !important;
 }
 
 /* Right column for the image carousel */
@@ -212,8 +227,8 @@
 
 /* Button Styling */
 .carDetails-btn {
-  background: linear-gradient(to right, #99723c 10%, #fae570 40%, #000000 140%); /* Gold and black gradient button */
-  color: #000000;
+  background: rgba(39, 39, 39, 0.6); /* Semi-transparent black */
+  color: #fff;
   padding: 12px 24px;
   border: none;
   border-radius: 18px;
@@ -222,13 +237,19 @@
   display: inline-block;
   font-size: 1rem;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+   box-shadow: 
+    0 0 8px #f0c674,   /* Outer soft glow */
+    0 0 15px rgba(240, 198, 116, 0.6), /* Outer spread */
 }
 
 .carDetails-btn:hover {
-  background-color: #fae570; /* Light gold color for hover effect */
-  transform: translateY(-3px); /* Slight elevation on hover */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(56, 55, 55, 0.24); /* Darker hover effect */
+  color: white; /* Better contrast */
+  transform: scale(1.05); /* Slight zoom */
+   box-shadow: 
+    0 0 8px #f0c674,   /* Outer soft glow */
+    0 0 15px rgba(240, 198, 116, 0.6), /* Outer spread */
+    inset 0 0 5px rgba(255, 255, 255, 0.2); /* Subtle inner glow */
 }
 
 .carDetails-btn:active {

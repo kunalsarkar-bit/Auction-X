@@ -113,7 +113,7 @@ input.form-control {
     border-radius: 50%;
   }
   
-  h2, h3, h5 {
+  .payment-page-body h2, h3, h5 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: #333;

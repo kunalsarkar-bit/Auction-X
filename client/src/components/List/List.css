@@ -6,31 +6,46 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  /* background: rgba(255, 255, 255, 0.1); Solid background for better contrast */
+  
+  /* Base black background */
   background: black;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  
+  /* Radial gradient with only the #d7cec5 color at the center */
+  background-image: radial-gradient(circle, #dca57b 15%, rgba(0, 0, 0, 0) 54%);
+  
+  
+  /* Optional border-radius for rounded corners */
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  
-  /* Enhanced neon glow effect */
+
+  /* Neon glow effect */
   box-shadow: 
-    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
-    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
-    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
-    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+    0 0 10px rgba(255, 223, 150, 0.8),  /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6),  /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4),  /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2);  /* Soft fading outermost glow */
   
-  transition: box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  /* Smooth transition for hover effect */
+  transition: box-shadow 0.3s ease;
+
+  /* Ensures the container has visual clarity and good contrast */
+  position: relative;
+  z-index: 1;
 }
 
-/* Optional: Add hover effect to intensify the neon glow */
-.list-product-carousel:hover {
-  box-shadow: 
-    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
-    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
-    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
-    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+/* Optional dark overlay for better content visibility */
+.list-product-carousel::before {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay to enhance contrast */
+  border-radius: 20px;
+  z-index: -1; /* Ensures the overlay is behind the content */
 }
+
+
 
 /* Scroll buttons */
 .list-scroll-btn {
@@ -66,7 +81,6 @@
   display: flex;
   gap: 20px;
   overflow-x: auto; /* Allow horizontal scrolling */
-  /* padding: 10px 0; */
   -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
   scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
@@ -78,20 +92,17 @@
 
 /* Individual product cards */
 .list-product-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  background: rgba(255, 255, 255, 0.15); /* Transparent white */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
   border-radius: 18px;
-  padding: 10px;
+  padding: 15px;
   margin: 20px;
-  width: 180px; /* Adjust as needed */
+  width: 200px; /* Adjust as needed */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex-shrink: 0; /* Prevent cards from shrinking */
   overflow: hidden; /* Prevent overflow of content */
-  box-shadow: 
-    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
-    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
-    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
-    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
 }
 
 .list-product-card:hover {
@@ -116,7 +127,7 @@
 
 /* List Button Styles */
 .list-button2 {
-  background: linear-gradient(to right, #99723c 10%, #fae570 40%, #99723c 90%);
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
   color: #fff;
   font-size: 1em; /* Reduced font size */
   font-weight: bold;
@@ -132,20 +143,12 @@
 
 
 .list-button2:hover {
-  background: linear-gradient(to right, #fae570 10%, #99723c 40%, #fae570 90%);
-  transform: translateY(-3px);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6);
+     background: rgba(0, 0, 0, 0.8); /* Darker hover effect */
+  color: white; /* Better contrast */
+  transform: scale(1.05); /* Slight zoom */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Stronger shadow */
 }
 
-.list-button2:active {
-  transform: translateY(1px);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.list-button2:focus {
-  outline: none;
-  box-shadow: 0px 0px 0px 3px rgba(250, 229, 112, 0.6);
-}
 
 /* Product pricing */
 .list-product-price {

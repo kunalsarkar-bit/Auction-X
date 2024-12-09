@@ -44,7 +44,7 @@
 @media screen and (max-width: 768px) {
   .piechart-container {
       padding: 15px;
-      max-width: 100%;
+      max-width: 90%;
   }
   
   .piechart-title {

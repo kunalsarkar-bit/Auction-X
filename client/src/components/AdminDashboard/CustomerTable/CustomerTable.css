@@ -123,3 +123,65 @@
       font-size: 12px; /* Smaller pagination text on mobile */
   }
 }
+/* For tablets and smaller devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .ant-table {
+    font-size: 14px; /* Smaller text size for table */
+  }
+
+  .ant-table-thead > tr > th {
+    font-size: 12px; /* Smaller header text */
+    padding: 8px; /* Adjust padding */
+  }
+
+  .ant-table-tbody > tr > td {
+    font-size: 12px; /* Smaller row text */
+    padding: 6px; /* Adjust padding */
+  }
+
+  .ant-pagination {
+    font-size: 12px; /* Smaller pagination text */
+    padding: 6px 8px; /* Reduce padding */
+  }
+
+  .ant-pagination-item {
+    padding: 4px 8px; /* Smaller number boxes */
+  }
+
+  .ant-pagination-prev .ant-pagination-item-link,
+  .ant-pagination-next .ant-pagination-item-link {
+    width: 28px; /* Smaller arrow buttons */
+    height: 28px;
+    font-size: 18px; /* Adjust arrow size */
+  }
+}
+
+/* For phones and very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .ant-table {
+    font-size: 12px; /* Even smaller table text */
+  }
+
+  .ant-table-thead > tr > th,
+  .ant-table-tbody > tr > td {
+    padding: 4px; /* Compact padding */
+    font-size: 10px; /* Smallest text size */
+  }
+
+  .ant-pagination {
+    font-size: 10px; /* Smaller pagination text */
+    padding: 4px 6px; /* Compact padding */
+  }
+
+  .ant-pagination-item {
+    padding: 2px 6px; /* Small pagination boxes */
+  }
+
+  .ant-pagination-prev .ant-pagination-item-link,
+  .ant-pagination-next .ant-pagination-item-link {
+    width: 24px; /* Smallest arrow buttons */
+    height: 24px;
+    font-size: 16px; /* Adjust arrow size */
+  }
+}
+
