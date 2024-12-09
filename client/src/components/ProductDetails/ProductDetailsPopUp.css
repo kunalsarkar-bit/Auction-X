@@ -31,7 +31,7 @@
 /* Card Styling */
 .carDetails-card {
   border: 1px solid #ddd;
-  border-radius: 12px;
+  border-radius: 18px;
   overflow: hidden;
   background-color: #fff;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -79,7 +79,7 @@
 .carDetails-popup-content {
   display: flex;
   background-color: #fff;
-  border-radius: 12px;
+  border-radius: 18px;
   padding: 40px;
   width: 90%;
   height: 80%;
@@ -115,7 +115,7 @@
   width: 100%; /* Ensure the image fills the width */
   height: 100%; /* Ensure the image fills the height */
   object-fit: contain; /* Ensure the image covers the container while maintaining aspect ratio */
-  border-radius: 15px;
+  border-radius: 18px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
@@ -216,7 +216,7 @@
   color: #000000;
   padding: 12px 24px;
   border: none;
-  border-radius: 8px;
+  border-radius: 18px;
   cursor: pointer;
   text-align: center;
   display: inline-block;
@@ -257,4 +257,84 @@
 .carDetails-btn-sm {
   padding: 8px 16px;
   font-size: 0.875rem; /* Smaller button */
+}
+
+/* Media Query for small screens (mobile) */
+@media screen and (max-width: 768px) {
+
+  /* Adjust container and grid layout for smaller screens */
+  .carDetails-container {
+    margin-top: 10px;
+    display: block;
+    align-items: flex-start;
+  }
+
+  .carDetails-row {
+    display: block;
+    gap: 10px; /* Reduced spacing between columns */
+  }
+
+  .carDetails-col {
+    flex: 1 1 100%; /* Make columns stack on smaller screens */
+    max-width: 100%; /* Allow column to take full width */
+    margin: 5px 0; /* Reduced margin for better fitting */
+  }
+
+  /* Popup content box */
+  .carDetails-popup-content {
+    width: 95%;
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  /* Adjust car details card image */
+  .carDetails-card-img {
+    height: 200px; /* Adjust image size for smaller screens */
+  }
+
+  /* Card title and text for better readability */
+  .carDetails-card-title {
+    font-size: 1.25rem;
+  }
+
+  .carDetails-card-text {
+    font-size: 1rem;
+  }
+
+  /* Reduce padding for footer on small screens */
+  .carDetails-footer {
+    padding: 10px 0;
+  }
+
+  .carDetails-footer-content {
+    display: block; /* Stack footer columns vertically */
+    gap: 20px;
+  }
+
+  /* Make the button smaller on mobile */
+  .carDetails-btn-lg {
+    padding: 12px 24px;
+    font-size: 1rem; /* Adjust size */
+  }
+
+  .carDetails-btn-sm {
+    padding: 6px 12px;
+    font-size: 0.75rem; /* Smaller button */
+  }
+
+  /* Adjust close button size for smaller screens */
+  .carDetails-close-btn {
+    font-size: 1.5rem;
+    top: 100px;
+    right: 10px;
+  }
+
+  /* Adjust the image carousel for smaller screens */
+  .carDetails-carousel-img {
+    width: 100%; /* Ensure the carousel images take full width */
+    max-width: 100%; /* Prevent the image from overflowing its container */
+    object-fit: cover; /* Optional: to ensure the image covers the space without distortion */
+    height: auto; /* Maintain aspect ratio */
+  }
 }

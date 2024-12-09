@@ -1,6 +1,6 @@
 .Product-body {
     width: 100%;
-    border-radius: 16px;
+    border-radius: 20px;
     font-family: Arial, sans-serif;
     color: #e0e0e0;
     margin-top: 5%;
@@ -51,7 +51,7 @@
     padding: 20px;
     margin-top: 46px;
     box-sizing: border-box;
-    border-radius: 10px;
+    border-radius: 18px;
     transition: transform 0.2s, box-shadow 0.2s;
   
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
@@ -84,7 +84,7 @@
     width: 100%;
     height: 150px; /* Set your desired height */
     object-fit: cover; /* This will crop the image to fit */
-    border-radius: 8px;
+    border-radius: 18px;
   }
   
   
@@ -119,7 +119,7 @@
     color: #e0e0e0;
     font-size: medium;
     border: none;
-    border-radius: 5px;
+    border-radius: 18px;
     cursor: pointer;
     transition: background-color 0.2s, transform 0.2s;
   }

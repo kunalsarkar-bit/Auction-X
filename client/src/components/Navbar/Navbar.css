@@ -353,7 +353,15 @@ nav ul li button:hover {
 .categories-dropdown button:focus + .dropdown-menu,
 .categories-dropdown:hover .dropdown-menu,
 .categories-dropdown:focus-within .dropdown-menu {
+    border-radius: 18px;
+
   display: block; /* Show on hover or focus */
+   box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+
 }
 
 
@@ -371,17 +379,22 @@ nav ul li button:hover {
 .sidebar {
   position: fixed;
   top: 0;
-  right: -250px;
+  right: -300px;
   /* Initially hidden */
   width: 250px;
   height: 100%;
   background-color: #000;
   padding: 20px;
-  border-radius: 15px;
-  
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;  
   transition: right 0.3s ease;
   /* Smooth slide transition */
   z-index: 999;
+   box-shadow: 
+    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
 }
 
 

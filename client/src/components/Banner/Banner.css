@@ -4,7 +4,7 @@
     width: 100%; /* Set the width to 90% */
     max-width: 2000px; /* Max width for larger screens */
     margin: auto; /* Center the card */
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 20px; /* Rounded corners */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,13 +13,7 @@
     
 }
 
-.wide-card:hover {
-    box-shadow: 
-    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
-    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
-    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
-    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
-  }
+
 
 .wide-card-item {
     display: none; /* Hide all items by default */

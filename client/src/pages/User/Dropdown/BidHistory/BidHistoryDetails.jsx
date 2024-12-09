@@ -32,7 +32,7 @@ const DetailedOrderPage = () => {
     <div className="BidHistoryDetails-container">
       <div className="row">
         {/* Delivery Address */}
-        <div className="col-md-4">
+        <div className="col-md-4 up-details">
           <div className="card p-3 mb-3">
             <h5>Delivery Address</h5>
             <p>Name: {order.name}</p>
@@ -44,17 +44,17 @@ const DetailedOrderPage = () => {
         {/* Rewards */}
         <div className="col-md-4">
           <div className="card p-3 mb-3">
-            <h5 style={{ marginLeft: "105px", fontSize: "24px" }}>
+            <h6 style={{ fontSize: "20px" , textAlign: "center"}}>
               You won the Bid
-            </h5>
-            <div className="col-md-6  rounded" style={{ marginLeft: "105px" }}>
+            </h6>
+            <div className="col-md-6  rounded img-of-div">
               <img
                 src={
                   order.images && order.images[0]
                     ? order.images[0].secure_url
                     : "https://via.placeholder.com/150"
                 }
-                className="img-fluid"
+                className="img-fluid middling-image"
                 alt={order.title || "Order Image"} // Fallback alt text
               />
             </div>

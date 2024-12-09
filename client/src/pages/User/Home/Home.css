@@ -43,7 +43,7 @@ a:hover {
 .neon-border  {
     position: relative;
     padding: 2px; /* Adjust padding to fit the content */
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 18px; /* Rounded corners */
     overflow: hidden; /* Ensure no overflow */
     box-shadow: 
     0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
@@ -82,7 +82,7 @@ a:hover {
 }
 
 .SpanTag:hover {
-  color: #ffd700;
+  color: black;
   text-shadow: 
   0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
   0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */

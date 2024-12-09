@@ -4,6 +4,9 @@ import "./ProfilePage2.css";
 import pfp from "../../../../assets/images/Layouts/profile.png";
 import { Link } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faInstagram, faYoutube, faWhatsapp, faTelegram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 
 function ProfilePage2() {
   const [profilePic, setProfilePic] = useState(null);
@@ -100,7 +103,7 @@ function ProfilePage2() {
         <div className="row">
           {/* Left Profile Section */}
           <div className="col-md-4">
-            <div className="card text-center">
+            <div className="card profilecard text-center">
               <div className="card-body">
                 <img
                   src={profilePic}
@@ -110,50 +113,89 @@ function ProfilePage2() {
                 />
               </div>
             </div>
-            <div className="card mt-3">
+            <div className="card profilecard mt-3 p-1">
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">
                   <Link to="/pendingbids">My Bidding History</Link>
                 </li>
                 <li className="list-group-item">
-                  <Link to="/payment">Payment</Link>
+                  <Link to="/balance">Add Money</Link>
                 </li>
-                <li className="list-group-item">
-                  <Link to="/shipping">Shipping</Link>
-                </li>
-                <li className="list-group-item">
-                  <Link to="/security">Safe And Secure Shopping</Link>
-                </li>
-                <li className="list-group-item">
-                  <Link to="/privacy">Privacy</Link>
-                </li>
-                <li className="list-group-item">
-                  <Link to="/whyus">Why Shop With Us</Link>
-                </li>
+
                 <li className="list-group-item">
                   <Link to="/report">Report Something Suspicious</Link>
                 </li>
-                <li className="list-group-item">
-                  <Link to="/terms">Terms And Conditions</Link>
-                </li>
-                <li className="list-group-item">
-                  <Link to="/faq">FAQ</Link>
-                </li>
+                
+                
                 <li className="list-group-item">
                   <Link to="/contact">Contact Us</Link>
                 </li>
+                
+              </ul>
+            </div>
+
+            <div className="card profilecard mt-3 p-1">
+              <ul className="list-group list-group-flush">
+              <li className="list-group-item">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faInstagram}  style={{ fontSize: '1.5rem', marginRight: '8px' }} />
+                      Instagram
+                    </a>
+                </li>
                 <li className="list-group-item">
-                  <Link to="/about">About Us</Link>
+                    <a href="https://www.facebook.com/?_rdr" target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faFacebook} style={{ fontSize: '1.5rem', marginRight: '8px' }} />
+                      Facebook
+                    </a>
+                </li>
+
+                <li className="list-group-item">
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faYoutube} style={{ fontSize: '1.5rem', marginRight: '8px' }} />
+                      Youtube
+                    </a>
+                </li>
+
+                
+                <li className="list-group-item">
+                    <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faWhatsapp} style={{ fontSize: '1.5rem', marginRight: '8px' }} />
+                      Whatsapp
+                    </a>
+                </li>
+                <li className="list-group-item">
+                    <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faXTwitter} style={{ fontSize: '1.5rem', marginRight: '8px' }} />
+                      X
+                    </a>
+                </li>
+                <li className="list-group-item">
+                    <a href="https://telegram.org/" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faTelegram}  style={{ fontSize: '1.5rem', marginRight: '8px' }} />
+                       Telegram
+                    </a>
                 </li>
               </ul>
             </div>
           </div>
 
+          
+
           {/* Right Profile Information Section */}
           <div className="col-md-8">
-            <div className="card mb-3">
+            <div className="card profilecard mb-3">
               <div className="card-body">
-                <h5 className="card-title">Profile Information</h5>
+                <div className="d-flex">
+               <b><h5 className="card-title mb-0">Profile Information</h5></b> 
+                 <button
+                      className="btn btn-primary btn-sm mt-3  profile-flex-button"
+                      onClick={toggleEdit}
+                    >
+    
+                     
+                      <FontAwesomeIcon icon={faEdit} /> 
+                    </button>
+                    </div>
                 {isEditing ? (
                   <form>
                     {/* Editable Inputs */}
@@ -199,14 +241,40 @@ function ProfilePage2() {
                     </div>
                     {/* Optional Gender Field */}
                     <div className="mb-3">
-                      <label className="form-label">Gender (optional)</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        name="gender"
-                        value={profileInfo.gender}
-                        onChange={handleInputChange}
-                      />
+                    
+  <div className="form-check form-check-inline">
+    <input
+      className="form-check-input"
+      type="radio"
+      name="gender"
+      value="male"
+      checked={profileInfo.gender === "male"}
+      onChange={handleInputChange}
+    />
+    <label className="form-check-label">Male</label>
+  </div>
+  <div className="form-check form-check-inline">
+    <input
+      className="form-check-input"
+      type="radio"
+      name="gender"
+      value="female"
+      checked={profileInfo.gender === "female"}
+      onChange={handleInputChange}
+    />
+    <label className="form-check-label">Female</label>
+  </div>
+  <div className="form-check form-check-inline">
+    <input
+      className="form-check-input"
+      type="radio"
+      name="gender"
+      value="other"
+      checked={profileInfo.gender === "other"}
+      onChange={handleInputChange}
+    />
+    <label className="form-check-label">Other</label>
+  </div>
                     </div>
                     {/* Save and Cancel Buttons */}
                     <button
@@ -275,12 +343,7 @@ function ProfilePage2() {
                         </div>
                       </div>
                     )}
-                    <button
-                      className="btn btn-primary btn-sm mt-3"
-                      onClick={toggleEdit}
-                    >
-                      Edit
-                    </button>
+                   
                   </div>
                 )}
               </div>
@@ -289,7 +352,7 @@ function ProfilePage2() {
             {/* FAQ Section - Full Width */}
             <div className="row">
               <div className="col-md-12">
-                <div className="card">
+                <div className="card profilecard">
                   <div className="card-body">
                     <h3>FAQs</h3>
                     <p>
@@ -313,18 +376,7 @@ function ProfilePage2() {
                       It happens as soon as you confirm the verification code
                       sent to your email (or mobile) and save the changes.
                     </p>
-                    <p>
-                      <strong>
-                        What happens to my existing account when I update my
-                        email address (or mobile number)?
-                      </strong>
-                    </p>
-                    <p>
-                      Updating your email address (or mobile number) doesn't
-                      invalidate your account. Your account remains fully
-                      functional. You'll continue seeing your Order history,
-                      saved information, and personal details.
-                    </p>
+                   
                     <p>
                       <strong>
                         Does my Seller account get affected when I update my

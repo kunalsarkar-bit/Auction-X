@@ -22,6 +22,7 @@
     margin-bottom: 1.5rem;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
 }
 
 .sellhistory-listing-content {
@@ -33,12 +34,13 @@
     width: 20%; /* Reduced to allow more space for details */
     padding: 1rem;
     text-align: center;
+    
 }
 
 .sellhistory-listing-image img {
     width: 100%;
     height: 295px; /* Set a specific height */
-    border-radius: 8px;
+    border-radius: 18px;
     object-fit: cover;
 }
 
@@ -98,4 +100,102 @@
 }
 .nolist{
     color: #fff;
+}
+
+@media (max-width: 768px) {
+    /* Adjust container padding and margin */
+    .sellhistory-container {
+        max-width: 100%;
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+        margin-top: 80px;
+    }
+
+    /* Title font size */
+    .sellhistory-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    /* Card flex direction */
+    .sellhistory-listing-card {
+        flex-direction: column; /* Stack the content vertically */
+    }
+
+    /* Adjust image size */
+    .sellhistory-listing-image {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .sellhistory-listing-image img {
+        height: 200px; /* Reduce image height for smaller screens */
+    }
+
+    /* Adjust details width and padding */
+    .sellhistory-listing-details {
+        width: 100%;
+        padding: 0.8rem;
+        height: 50px;
+    }
+
+    /* Reduce font size of details */
+    .sellhistory-listing-title {
+        font-size: 1rem;
+    }
+
+    /* Adjust actions layout */
+    .sellhistory-listing-actions {
+        width: 100%;
+        flex-direction: row; /* Align buttons side by side */
+        justify-content: space-evenly;
+        padding: 0.5rem 0;
+    }
+
+    /* Button adjustments */
+    .sellhistory-btn-edit,
+    .sellhistory-btn-delete {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+        margin: 0.3rem;
+        width: auto; /* Auto-adjust width for horizontal layout */
+    }
+
+    /* No list message adjustment */
+    .nolist {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .sellhistory-listing-details p{
+    font-size: 10px; /* Adjust size as needed */
+    line-height: 1.4;  /* Optional: Improve readability */
+    margin: 0;
+    padding: 0;
+    }
+    .sellhistory-listing-title{
+     font-size: 13px; /* Adjust size as needed */
+
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .sellhistory-title {
+        font-size: 1.2rem;
+    }
+
+    .sellhistory-listing-card {
+        margin-bottom: 1rem;
+    }
+
+    .sellhistory-btn-edit,
+    .sellhistory-btn-delete {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .sellhistory-listing-image img {
+        height: 150px; /* Further reduce image height */
+    }
 }

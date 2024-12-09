@@ -32,3 +32,15 @@
     margin-top: 150px;
     margin-bottom: 55px;
   }
+
+  .list-group-item a {
+    text-decoration: none; /* Remove underline */
+    color: #000000; /* Change link color */
+  }
+  .profilecard{
+    border-radius: 18px;
+  }
+  .profile-flex-button{
+    margin-left: 75%;
+    margin-bottom: 3%;
+  }
