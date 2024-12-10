@@ -8,7 +8,7 @@ import "./List.css";
 const ProductListing = () => {
   const productListRef = useRef(null);
   const [products, setProducts] = useState([]);
-  const [displayCount, setDisplayCount] = useState(6);
+  const [displayCount, setDisplayCount] = useState(7);
   const [category, setCategory] = useState(""); // Category state, can be set dynamically
   const navigate = useNavigate();
   const [selectedProductId, setSelectedProductId] = useState(null);

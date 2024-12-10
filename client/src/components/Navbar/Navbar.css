@@ -137,8 +137,8 @@ nav ul li button {
   /* Font family */
   font-weight: 700;
   /* Bold text */
-  text-shadow: 0 0 5px #bf953f, 0 0 10px #bf953f;
-  /* Text shadow */
+
+ 
   text-decoration: none;
   /* No underline */
 }
@@ -288,7 +288,10 @@ nav ul li button:hover {
   text-align: center;
   cursor: pointer;
   color: #fff;
-  background-color: #000;
+  background: rgba(39, 39, 39, 0.6); /* Semi-transparent black */
+  box-shadow: 
+  0 0 8px #f0c674,   /* Outer soft glow */
+  0 0 15px rgba(240, 198, 116, 0.6); /* Outer spread */
   transition: background-color 0.2s ease, color 0.1s ease, transform 0.2s ease;
 }
 
@@ -343,11 +346,20 @@ nav ul li button:hover {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: #000 !important;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  padding: 10px;
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center items horizontally */
+   /* Remove default padding from <ul> */
+  list-style: none; /* Remove default list styles */
+  padding: 0;
+ 
+  background: rgba(255, 255, 255, 0) !important; /* Transparent white */  
+  
+  -webkit-backdrop-filter: blur(40px); /* For Safari support */
+  backdrop-filter: blur(40px); /* Apply blur effect */
+  /* padding: 10px; */
   z-index: 1000; /* Ensure dropdown is on top */
-  display: none; /* Start as hidden */
+  
 }
 
 .categories-dropdown button:focus + .dropdown-menu,
@@ -363,8 +375,22 @@ nav ul li button:hover {
     0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
 
 }
-
-
+.dropdown-menu button {
+  background: rgba(39, 39, 39, 0.6); /* Semi-transparent black */
+  box-shadow: 
+  0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+  0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+  0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+  0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+  padding: 10px 20px; /* Optional: Adjust button padding */
+  font-size: 16px; /* Optional: Adjust button font size */
+  text-align: center; /* Ensure text inside button is centered */
+}
+.dropdown-menu li{
+  display: flex;
+  justify-content: center; /* Horizontally center the button */
+  margin-bottom: 10px; /* Optional: Add some spacing between items */
+}
 /* Hamburger Menu */
 .hamburger {
   display: none;

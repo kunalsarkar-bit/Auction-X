@@ -90,32 +90,33 @@ const Header = () => {
                 </li>
                 <li>
                   <button onClick={() => navigate("/category/Automobiles")}>
-                    Automobiles & Electronics
+                   Technology
                   </button>
                 </li>
                 <li>
                   <button onClick={() => navigate("/category/Furnitures")}>
-                    Furniture
+                  Homeappliances
                   </button>
                 </li>
                 <li>
                   <button onClick={() => navigate("/category/Beverages")}>
-                    Foods & Beverages
+                  Foodbeverage
                   </button>
                 </li>
-                <li>
-                  <button onClick={() => navigate("/category/Currencies")}>
-                    Currency
-                  </button>
-                </li>
+                
                 <li>
                   <button onClick={() => navigate("/category/Books")}>
-                    Books & Painting
+                  Stationery
                   </button>
                 </li>
                 <li>
                   <button onClick={() => navigate("/category/Antiques")}>
                     Antiques
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => navigate("/category/Currencies")}>
+                    Others
                   </button>
                 </li>
               </ul>

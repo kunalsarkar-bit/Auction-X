@@ -77,12 +77,16 @@
   pointer-events: none;
 }
 
+.carDetails-popup .timer h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
 /* Popup content box with increased width and two-column layout */
 .carDetails-popup-content {
   display: flex;
   background: rgba(255, 255, 255, 0); /* Fully transparent */
-  backdrop-filter: blur(10px); /* Apply blur effect */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  
   color: white;
   border-radius: 18px;
   padding: 40px;

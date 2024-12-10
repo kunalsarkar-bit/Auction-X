@@ -32,8 +32,8 @@
     padding: 15px;
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.15); /* Transparent white */
-  backdrop-filter: blur(10px); /* Apply blur effect */
   -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  backdrop-filter: blur(10px); /* Apply blur effect */
     display: flex;
     flex-direction: column;
     transition: transform 0.3s, box-shadow 0.3s;

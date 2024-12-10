@@ -13,15 +13,13 @@
     
 }
 
-
-
 .wide-card-item {
     display: none; /* Hide all items by default */
     opacity: 0; /* Start hidden */
     transform: translateX(100%); /* Start off-screen to the right */
     transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth slide in from right */
     width: 100%; /* Set width of the card item to fill the card */
-    height: auto; /* Allow the image to define the height */
+    height: 75vh; /* Allow the image to define the height */
 }
 
 .wide-card-item.active {
@@ -32,9 +30,9 @@
 
 .wide-card-item img {
     width: 100%; /* Full width for image */
-    height: auto; /* Maintain aspect ratio */
+    height: 75vh; /* Maintain aspect ratio */
     object-fit: cover ; /* Ensure the image fills the space without distortion */
-    max-height: 450px; /* Limit the height of the image to avoid it being too large */
+    max-height: 200vh; /* Limit the height of the image to avoid it being too large */
     border-radius: 10px; /* Rounded corners for the image */
     image-rendering: auto; /* Ensures proper rendering */
 }
