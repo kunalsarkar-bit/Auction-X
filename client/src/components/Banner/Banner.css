@@ -60,3 +60,54 @@
 .dot.active {
     background-color: #717171; /* Active dot color */
 }
+
+@media (max-width: 768px) {
+    .wide-card {
+        width: 90%; /* Adjust width for smaller screens */
+        max-width: 100%; /* Ensure the card fits within the screen */
+        padding: 10px; /* Add padding to avoid content touching edges */
+    }
+
+    .wide-card-item {
+        height: 28vh; /* Reduce the height for smaller screens */
+    }
+
+    .wide-card-item img {
+        height: 25vh;
+        border-radius: 18px;
+    }
+
+    .BANNERnavigation {
+        bottom: 5px; /* Position the navigation dots closer to the bottom */
+    }
+
+    .dot {
+        height: 8px; /* Reduce dot size */
+        width: 8px; /* Reduce dot size */
+    }
+}
+
+@media (max-width: 480px) {
+    .wide-card {
+        width: 100%; /* Ensure the card takes full width on mobile */
+        padding: 5px; /* Add minimal padding */
+    }
+
+    .wide-card-item {
+        height: 28vh; /* Further reduce the height for small screens */
+    }
+
+    .wide-card-item img {
+        height: 25vh;
+        border-radius: 18px;
+    }
+
+    .BANNERnavigation {
+        bottom: 3px; /* Adjust navigation dots position further */
+    }
+
+    .dot {
+        height: 6px; /* Further reduce dot size */
+        width: 6px; /* Further reduce dot size */
+    }
+}
