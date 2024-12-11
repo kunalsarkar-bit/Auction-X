@@ -36,6 +36,8 @@
   .list-group-item a {
     text-decoration: none; /* Remove underline */
     color: #000000; /* Change link color */
+    
+    
   }
   .profilecard{
     border-radius: 18px;
@@ -44,3 +46,73 @@
     margin-left: 75%;
     margin-bottom: 3%;
   }
+  .insta {
+    padding-top: 30px;
+    background: linear-gradient(45deg, rgba(158, 94, 201, 0.7), rgba(192, 61, 61, 0.7), rgba(219, 165, 88, 0.7));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    width: 94%;
+   margin-left: 3%;
+   margin-top: 3%;
+}
+
+.faceb {
+    background: linear-gradient(90deg, rgba(24, 119, 242, 0.7), rgba(24, 90, 219, 0.7));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    width: 94%;
+    margin-left: 3%;
+}
+
+.yt {
+    background: linear-gradient(90deg, rgba(211, 70, 70, 0.7), rgba(0, 0, 0, 0.911));
+    
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    width: 94%;
+    margin-left: 3%;
+}
+
+.whatsapp {
+    background: linear-gradient(90deg, rgba(37, 211, 102, 0.7), rgba(18, 140, 126, 0.7));
+    
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    width: 94%;
+    margin-left: 3%;
+}
+
+.tweeter {
+    background: linear-gradient(90deg, rgba(80, 80, 80, 0.7), rgba(0, 0, 0, 0.884));
+ 
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    width: 94%;
+    margin-left: 3%;
+}
+
+.telegram {
+    background: linear-gradient(90deg, rgba(0, 136, 204, 0.7), rgba(0, 95, 140, 0.7));
+  
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    width: 94%;
+    margin-left: 3%;
+}
+
+  .list-group{
+    padding: 5px;
+  }
+  

@@ -119,6 +119,11 @@
   color: white !important;
 }
 
+.carDetails-popup .timer__box {
+  border-radius: 18px !important;
+}
+
+
 /* Right column for the image carousel */
 .carDetails-popup-content-right {
   flex: 2;
@@ -257,7 +262,6 @@
 }
 
 .carDetails-btn:active {
-  background-color: #99723c; /* Keep the golden color on active state */
   transform: translateY(2px); /* Button presses down slightly on active */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }

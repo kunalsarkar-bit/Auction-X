@@ -27,21 +27,24 @@ const ProductDetail = () => {
     fetchProductDetail();
   }, [id]);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
+  if (loading) return <div className="loading">Loading...</div>;
+  if (error) return <div className="error">{error}</div>;
 
   return (
     <div className="product-detail">
       {product ? (
         <>
-          <img
-            src={
-              product.images && product.images.length > 0
-                ? product.images[0].secure_url
-                : "fallback_image_url.jpg"
-            }
-            alt={product.name}
-          />
+          <div className="product-image-container">
+            <img
+              src={
+                product.images && product.images.length > 0
+                  ? product.images[0].secure_url
+                  : "fallback_image_url.jpg"
+              }
+              alt={product.name}
+              className="product-image"
+            />
+          </div>
           <div className="product-detail-content">
             <h2>{product.name}</h2>
             <p>

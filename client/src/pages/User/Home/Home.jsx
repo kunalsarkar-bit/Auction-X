@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       <div style={{ padding: "20px" }}>
-        <section style={{ marginBottom: "15px", marginTop: "120px" }}>
+        <section style={{ marginBottom: "15px", marginTop: "5px" }}>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <Banner />
           </div>

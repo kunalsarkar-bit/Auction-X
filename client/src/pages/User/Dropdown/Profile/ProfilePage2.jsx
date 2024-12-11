@@ -136,20 +136,20 @@ function ProfilePage2() {
 
             <div className="card profilecard mt-3 p-1">
               <ul className="list-group list-group-flush">
-              <li className="list-group-item">
+              <li className="list-group-item insta">
                     <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faInstagram}  style={{ fontSize: '1.5rem', marginRight: '8px' }} />
                       Instagram
                     </a>
                 </li>
-                <li className="list-group-item">
+                <li className="list-group-item faceb">
                     <a href="https://www.facebook.com/?_rdr" target="_blank" rel="noopener noreferrer">
                       <FontAwesomeIcon icon={faFacebook} style={{ fontSize: '1.5rem', marginRight: '8px' }} />
                       Facebook
                     </a>
                 </li>
 
-                <li className="list-group-item">
+                <li className="list-group-item yt">
                     <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faYoutube} style={{ fontSize: '1.5rem', marginRight: '8px' }} />
                       Youtube
@@ -157,19 +157,19 @@ function ProfilePage2() {
                 </li>
 
                 
-                <li className="list-group-item">
+                <li className="list-group-item whatsapp">
                     <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faWhatsapp} style={{ fontSize: '1.5rem', marginRight: '8px' }} />
                       Whatsapp
                     </a>
                 </li>
-                <li className="list-group-item">
+                <li className="list-group-item tweeter">
                     <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faXTwitter} style={{ fontSize: '1.5rem', marginRight: '8px' }} />
                       X
                     </a>
                 </li>
-                <li className="list-group-item">
+                <li className="list-group-item telegram">
                     <a href="https://telegram.org/" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faTelegram}  style={{ fontSize: '1.5rem', marginRight: '8px' }} />
                        Telegram

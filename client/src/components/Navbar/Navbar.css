@@ -29,7 +29,7 @@ header {
   /* Background color */
   color: var(--text-color);
   /* Text color */
-  position: fixed;
+  position: relative;
   /* Fixed position */
   width: 100%;
   /* Full width */
@@ -51,7 +51,12 @@ header {
   border-bottom: 1px solid #ccc;
   /* Border at the bottom */
 }
-
+header {
+  position: relative;
+ 
+  height: 110px;
+  z-index: 1;
+}
 /* Header hover effect */
 header:hover {
   box-shadow: 
@@ -64,13 +69,32 @@ header:hover {
 
 /* Logo Styling */
 .logo img {
-  width: 180px;
+  width: 185px;
   /* Logo width */
-  height: 40px;
+  height: 45px;
   /* Logo height */
   margin-left: 30px;
   /* Margin on the left */
 }
+/* Logo Styling */
+
+
+/* Character Sitting Styling */
+.character-sitting {
+  position: absolute;
+  top: 0;
+  left: 120px; /* Adjust the value to position it next to the logo */
+  z-index: 2;
+}
+
+.character-sitting .character-image {
+  position: relative;
+  top: -20px; /* Adjust for alignment */
+  width: 77px; /* Adjust size */
+  margin-left: 130px;
+  transform: translateY(20%); /* Legs hanging below */
+}
+
 
 .logo {
   transition: transform 0.2s ease, filter 0.2s ease;
@@ -497,6 +521,9 @@ box-shadow:
     display: none;
     /* Hide desktop nav on mobile */
   }
+  header{
+    height: 90px;
+  }
 
   .hamburger {
     display: block;
@@ -566,7 +593,18 @@ box-shadow:
     margin-top: 170%;
     margin-left: 22%;
   }
-
+  .character-sitting .character-image {
+ 
+    top: -13px; /* Adjust for alignment */
+    width: 60px; /* Adjust size */
+    margin-left: 55px;
+   
+  }
+  .profile-image {
+margin-left: 200%;
+  
+   
+  }
 }
 
 @media (max-width: 1024px){
@@ -574,7 +612,9 @@ box-shadow:
     display: none;
     /* Hide desktop nav on mobile */
   }
-
+  header{
+    height: 90px;
+  }
   .hamburger {
     display: block;
     font-size: 24px;
@@ -642,5 +682,18 @@ box-shadow:
   .slidebarLogo {
     margin-top: 170%;
     margin-left: 22%;
+  }
+
+  .character-sitting .character-image {
+ 
+    top: -13px; /* Adjust for alignment */
+    width: 60px; /* Adjust size */
+    margin-left: 55px;
+   
+  }
+  .profile-image {
+margin-left: 200%;
+  
+   
   }
 }

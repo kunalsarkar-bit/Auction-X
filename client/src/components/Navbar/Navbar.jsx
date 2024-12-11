@@ -7,6 +7,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import { useSelector, useDispatch } from "react-redux";
 import { post } from "../../services/ApiEndpoint";
 import { Logout } from "../../redux/AuthSlice";
+import nav_mascot from "../../assets/images/Layouts/mascot_navbar.png"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false); // State for dropdown handling
@@ -64,6 +65,13 @@ const Header = () => {
           <img src={brandLogo} alt="Brand Logo" />
         </Link>
       </div>
+      <div className="character-sitting">
+    <img
+      src={nav_mascot}
+      alt="Sitting Character"
+      className="character-image"
+    />
+  </div>
 
       {/* Navigation Menu */}
       <nav>

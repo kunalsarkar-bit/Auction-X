@@ -6,12 +6,31 @@
   background-color: white; /* White background for any empty space */
 }
 
+.ProductDetails .card {
+  border-radius: 18px;
+}
+
+
+
 /* Styling for thumbnail images */
 .thumbnail-image {
   width: 110px; /* Keep thumbnail width fixed */
   height: 75px; /* Keep thumbnail height fixed */
   object-fit: cover; /* Maintain aspect ratio for thumbnails */
-  border-radius: 5px; /* Optional: Rounded corners */
+  border-radius: 18px; /* Optional: Rounded corners */
+}
+
+.ProductDetails 
+.carousel-image,
+.thumbnail-image,
+.product-details-image {
+  border-radius: 18px;
+}
+.ProductDetails .timer__box {
+  border-radius: 18px;
+}
+.ProductDetails .btn {
+  border-radius: 18px;
 }
 
 /* Styling for the thumbnail container */
@@ -80,4 +99,11 @@
   font-family: 'Poppins', sans-serif;
   border: 3px solid #fae570; /* A gold border */
   box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Glowing effect */
+}
+
+@media (max-width: 768px) {
+  .ProductDetails .card {
+  margin-top: 4%;
+}
+
 }

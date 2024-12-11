@@ -105,7 +105,7 @@ const ContactUs = () => {
               />
             </Form.Group>
             <Button
-              className="mt-3"
+              className="mt-3 contact-button"
               variant="warning"
               type="submit"
               disabled={isSubmitting}
