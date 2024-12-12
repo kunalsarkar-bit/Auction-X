@@ -7,7 +7,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import { useSelector, useDispatch } from "react-redux";
 import { post } from "../../services/ApiEndpoint";
 import { Logout } from "../../redux/AuthSlice";
-import nav_mascot from "../../assets/images/Layouts/mascot_navbar.png"
+import nav_mascot from "../../assets/images/Layouts/mascot_navbar.gif"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false); // State for dropdown handling

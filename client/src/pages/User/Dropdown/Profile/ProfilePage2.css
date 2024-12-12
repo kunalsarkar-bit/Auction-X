@@ -1,13 +1,17 @@
 .card-body {
     padding: 20px;
   }
-  
-  .card {
-    
-    /* box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); */
-    
+  .bottom-right-image {
+    position: absolute;
+    bottom: -1px; /* Adjust spacing from the bottom */
+    right: -1px; /* Adjust spacing from the right */
+    width: 350px; /* Set appropriate size for the image */
+    height: auto;
+    pointer-events: none; /* Makes sure the image doesn’t interfere with user interactions */
+    /* Optional: Adjust opacity for a subtle look */
+    z-index: 2;
+   
   }
-  
   .progress {
     height: 20px;
   }
@@ -115,4 +119,16 @@
   .list-group{
     padding: 5px;
   }
-  
+  /* Small screens (mobile devices) */
+@media (max-width: 768px) {
+  .profile-flex-button {
+      margin-left: 155px; 
+  }
+  .profilecard{
+    margin-top: 6%;
+  }
+
+  .profilebody{
+    padding: 0;
+  }
+}

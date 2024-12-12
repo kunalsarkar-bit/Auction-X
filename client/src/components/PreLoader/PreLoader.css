@@ -7,16 +7,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
-
+  background-color: white; /* Original white background color */
   overflow: hidden;
   z-index: 1000;
 }
 
 /* Initial Loading Style */
 .ENTRY-loader.loading {
-  color: black; /* Text color remains black */
-  font-size: 3.5rem; /* Increased font size */
+  color: black; /* Original text color remains black */
+  font-size: 3.5rem;
   font-weight: bold;
   animation: ENTRY-pulse 1.5s infinite ease-in-out;
 }
@@ -24,13 +23,13 @@
 /* Break Apart Animation */
 .ENTRY-break {
   display: flex;
-  gap: 10px; /* Slightly increased gap for clarity */
+  gap: 10px;
 }
 
 .ENTRY-piece {
-  font-size: 3.5rem; /* Increased font size */
+  font-size: 3.5rem;
   font-weight: bold;
-  color: black; /* Text color remains black */
+  color: black; /* Original text color remains black */
   animation: ENTRY-breakApart 0.5s forwards;
 }
 
@@ -42,14 +41,6 @@
 .ENTRY-piece6 { animation-delay: 0.5s; }
 .ENTRY-piece7 { animation-delay: 0.6s; }
 .ENTRY-piece8 { animation-delay: 0.7s; }
-
-/* Optional: Adjust the transform behavior for piece 8 if needed */
-.ENTRY-piece8 {
-  font-size: 3.5rem; /* Matches the size of other pieces */
-  font-weight: bold;
-  color: black;
-  animation: ENTRY-breakApart 0.5s forwards;
-}
 
 @keyframes ENTRY-breakApart {
   to {
@@ -64,15 +55,20 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3.5rem; /* Increased font size */
+  transform-origin: center center; /* Ensures scaling from the center */
+  font-size: 3.5rem;
   font-weight: bold;
-  color: black; /* Text color remains black */
+  color: black; /* Original text color remains black */
   animation: ENTRY-zoomIn 1.5s forwards;
 }
 
 @keyframes ENTRY-zoomIn {
-  from { transform: scale(1); }
-  to { transform: scale(500); }
+  from {
+    transform: translate(-50%, -50%) scale(1); /* Explicit centering */
+  }
+  to {
+    transform: translate(-50%, -50%) scale(500); /* Uniform scaling */
+  }
 }
 
 /* Hide loader after zoom animation */
@@ -89,23 +85,24 @@
 
 /* Media query for small devices (e.g., phones) */
 @media (max-width: 768px) {
-
-
   @keyframes ENTRY-zoomIn {
-    from { transform: scale(1); }
-    to { transform: scale(300); } /* Smaller scale for smaller screens */
+    from {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+      transform: translate(-50%, -50%) scale(250); /* Adjusted for smaller screens */
+    }
   }
 
   .ENTRY-break {
-    gap: 5px; /* Reduce gap for compact layout */
+    gap: 5px;
   }
 }
 
 /* Media query for extra-small devices (e.g., very small phones) */
 @media (max-width: 480px) {
-
   .ENTRY-piece {
-    font-size: 3.5rem; /* Match loader font size */
+    font-size: 3rem; /* Slightly smaller font for tiny screens */
   }
 
   .ENTRY-zoom {
@@ -113,11 +110,15 @@
   }
 
   @keyframes ENTRY-zoomIn {
-    from { transform: scale(1); }
-    to { transform: scale(200); } /* Even smaller scale for tiny screens */
+    from {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+      transform: translate(-50%, -50%) scale(180); /* Further reduced scale */
+    }
   }
 
   .ENTRY-break {
-    gap: 3px; /* Minimal gap for compact layout */
+    gap: 3px;
   }
 }

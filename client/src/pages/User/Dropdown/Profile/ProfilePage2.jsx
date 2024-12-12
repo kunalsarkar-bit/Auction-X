@@ -7,7 +7,7 @@ import { toast } from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram, faYoutube, faWhatsapp, faTelegram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-
+import mascotProfile from "../../../../assets/images/Layouts/mascot_profile.gif"
 function ProfilePage2() {
   const [profilePic, setProfilePic] = useState(null);
 
@@ -343,7 +343,11 @@ function ProfilePage2() {
                         </div>
                       </div>
                     )}
-                   
+                    <img
+                        src={mascotProfile}
+                        alt="Character"
+                        className="bottom-right-image"
+                      />
                   </div>
                 )}
               </div>

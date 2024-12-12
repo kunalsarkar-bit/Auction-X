@@ -29,7 +29,7 @@ header {
   /* Background color */
   color: var(--text-color);
   /* Text color */
-  position: relative;
+  position: fixed;
   /* Fixed position */
   width: 100%;
   /* Full width */
@@ -43,20 +43,12 @@ header {
     0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
     0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
   /* Shadow effects */
-  /* border-radius: 15px; */
-  /* Rounded corners */
-  margin-bottom: 20px;
-  /* Margin below header */
-  /* Border at the top */
+  height: 110px;
+  /* height */
   border-bottom: 1px solid #ccc;
   /* Border at the bottom */
 }
-header {
-  position: relative;
- 
-  height: 110px;
-  z-index: 1;
-}
+
 /* Header hover effect */
 header:hover {
   box-shadow: 
@@ -75,8 +67,8 @@ header:hover {
   /* Logo height */
   margin-left: 30px;
   /* Margin on the left */
+  z-index: 100;
 }
-/* Logo Styling */
 
 
 /* Character Sitting Styling */
@@ -88,11 +80,12 @@ header:hover {
 }
 
 .character-sitting .character-image {
-  position: relative;
-  top: -20px; /* Adjust for alignment */
-  width: 77px; /* Adjust size */
-  margin-left: 130px;
+  position: absolute;
+  top: -23px; /* Adjust for alignment */
+  width: 130px; /* Adjust size */
+  margin-left: 115px;
   transform: translateY(20%); /* Legs hanging below */
+ 
 }
 
 
@@ -550,6 +543,7 @@ box-shadow:
   /* Desktop search bar visibility */
   .search-bar {
     display: flex;
+     border: none;
 
     /* Show search bar on desktop */
   }
@@ -596,15 +590,18 @@ box-shadow:
   .character-sitting .character-image {
  
     top: -13px; /* Adjust for alignment */
-    width: 60px; /* Adjust size */
-    margin-left: 55px;
+    width: 100px; /* Adjust size */
+    margin-left: 35px;
    
   }
-  .profile-image {
-margin-left: 200%;
-  
-   
-  }
+  .profile-btn  {
+    margin-left: 30%; 
+      }
+      
+      .sidebar .ListOption button {          
+        box-shadow: none;
+        }
+      
 }
 
 @media (max-width: 1024px){
@@ -687,13 +684,17 @@ margin-left: 200%;
   .character-sitting .character-image {
  
     top: -13px; /* Adjust for alignment */
-    width: 60px; /* Adjust size */
-    margin-left: 55px;
+    width: 100px; /* Adjust size */
+    margin-left: 35px;
    
   }
-  .profile-image {
-margin-left: 200%;
-  
-   
-  }
+ 
+  .profile-btn  {
+    margin-left: 30%;
+      }
+         
+  .sidebar .ListOption button {          
+        box-shadow: none;
+       }
+      
 }

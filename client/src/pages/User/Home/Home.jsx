@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       <div style={{ padding: "20px" }}>
-        <section style={{ marginBottom: "15px", marginTop: "5px" }}>
+        <section style={{ marginBottom: "20px", marginTop: "135px" }}>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <Banner />
           </div>
@@ -21,7 +21,7 @@ const Home = () => {
           <h2
             style={{
               textAlign: "center",
-              marginTop: "35px",
+              marginTop: "50px",
               marginBottom: "70px",
             }}
             className="neon-border"

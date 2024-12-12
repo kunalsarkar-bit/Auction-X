@@ -56,13 +56,21 @@ const OrdersPage = () => {
               </div>
               <div className="col-md-8">
                 <div className="card-body">
-                  <h5 className="card-title">{order.title}</h5>
+                  <h1 >{order.title}</h1>
+                  <h4>
                   <p className="card-text">
                     Price:{" "}
                     {order.biddingStartPrice
                       ? `₹${order.biddingStartPrice.toFixed(2)}`
                       : "N/A"}
                   </p>
+                  <p>
+                  Highest Bid:{" "}
+                    {order.highestBid
+                      ? `₹${order.highestBid.toFixed(2)}`
+                      : "N/A"}
+                  </p>
+                  </h4>
                 </div>
               </div>
               <div

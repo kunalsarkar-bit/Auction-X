@@ -167,6 +167,14 @@ input.form-control {
       width: 400px; /* Smaller background image */
       height: 400px;
   }
+
+   .PAYMENT-container {
+    margin-top: 20% !important;
+  }
+
+  .payment-page::before{
+    margin-top: 20% !important;
+  }
 }
 
 /* Medium screens (576px to 767px) */
@@ -175,7 +183,7 @@ input.form-control {
       padding: 10px 25px;
       font-size: 1.1rem;
   }
-
+  
   .payment-page {
       padding: 25px;
       box-shadow: 0 0 5px rgba(255, 223, 150, 0.5); /* Softer shadow */
