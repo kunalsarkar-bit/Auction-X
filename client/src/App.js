@@ -65,7 +65,10 @@ import SearchAndPostDetail from "./pages/User/SearchAndPostDetail/SearchAndPostD
 import ProductDetails from "./components/ProductDetails/ProductDetails";
 import PaymentPage from "./pages/User/Dropdown/Payment/Payment";
 import ScrollToTop from "./components/Scroll/Scroll";
+import ScrollToTopManual from "./components/ScrollToTop/ScrollToTop";
 import CategoryList from "./components/CategoryList/CategoryList";
+import TodayBid from "./components/Banner3/TodayBid";
+import TomorrowBid from "./components/Banner3/TomorrowBid";
 
 // Protected Route
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
@@ -94,6 +97,7 @@ const App = () => {
 
   return (
     <>
+      <ScrollToTopManual />
       <ScrollToTop />
       <Toaster />
       <Routes>
@@ -115,6 +119,8 @@ const App = () => {
           <Route path="/about2" element={<AboutUsTwo />} />
           <Route path="/bid" element={<BidAnItem />} />
           <Route path="/category/:category" element={<CategoryList />} />
+          <Route path="/todaybid" element={<TodayBid />} />
+          <Route path="/tomorrowbid" element={<TomorrowBid />} />
         </Route>
 
         {/* Admin routes wrapped with AdminLayout */}

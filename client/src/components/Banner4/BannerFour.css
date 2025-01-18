@@ -1,0 +1,237 @@
+/* Carousel container */
+.list-product-carousel {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    
+    /* Base black background */
+    background: black;
+    
+    /* Radial gradient with only the #d7cec5 color at the center */
+    background-image: radial-gradient(circle, #dca57b 15%, rgba(0, 0, 0, 0) 54%);
+    
+    
+    /* Optional border-radius for rounded corners */
+    border-radius: 20px;
+  
+    /* Neon glow effect */
+    box-shadow: 
+      0 0 10px rgba(255, 223, 150, 0.8),  /* Inner glow with gold tint */
+      0 0 20px rgba(255, 223, 150, 0.6),  /* Outer glow for depth */
+      0 0 30px rgba(255, 223, 150, 0.4),  /* Larger, softer glow */
+      0 0 40px rgba(255, 223, 150, 0.2);  /* Soft fading outermost glow */
+    
+    /* Smooth transition for hover effect */
+    transition: box-shadow 0.3s ease;
+  
+    /* Ensures the container has visual clarity and good contrast */
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Optional dark overlay for better content visibility */
+  .list-product-carousel::before {
+    content: ''; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay to enhance contrast */
+    border-radius: 20px;
+    z-index: -1; /* Ensures the overlay is behind the content */
+  }
+  
+  
+  
+  /* Scroll buttons */
+  .list-scroll-btn {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background for better visibility */
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 12px; /* Increased padding for a larger clickable area */
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+  }
+  
+  .list-scroll-btn:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Lighten the background on hover */
+    transform: translateY(-50%) scale(1.1); /* Slightly enlarge the button on hover */
+  }
+  
+  .list-scroll-btn.left {
+    left: 20px; /* Increased distance from the edge */
+  }
+  
+  .list-scroll-btn.right {
+    right: 20px; /* Increased distance from the edge */
+  }
+  
+  /* Product list container */
+  .list-product-list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  }
+  
+  
+  .list-product-list::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between images */
+    padding: 20px;
+  }
+  
+  .image-box {
+    cursor: pointer;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between images */
+    padding: 20px;
+    flex-wrap: wrap; /* Allows wrapping for responsiveness */
+  }
+  
+  .image-box {
+    cursor: pointer;
+  }
+  
+  .product-banner-image {
+    width: 800px; /* Adjust to match your desired width */
+    height: auto; /* Maintain the original aspect ratio */
+    max-height: 400px; /* Optional: limit the maximum height */
+    object-fit: contain; /* Ensures the entire image is visible */
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .product-banner-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  
+  /* Individual product cards */
+  .list-product-card {
+    background: rgba(255, 255, 255, 0.15); /* Transparent white */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    border-radius: 18px;
+    padding: 15px;
+    margin: 20px;
+    width: 200px; /* Adjust as needed */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0; /* Prevent cards from shrinking */
+    overflow: hidden; /* Prevent overflow of content */
+  }
+  
+  .list-product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+      0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+      0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+      0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+      0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+  }
+  
+  
+  
+  /* List Button Styles */
+  .list-button2 {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    color: #fff;
+    font-size: 1em; /* Reduced font size */
+    font-weight: bold;
+    padding: 10px 20px; /* Reduced padding */
+    border: none;
+    border-radius: 18px; /* Slightly smaller border radius */
+    cursor: pointer;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4); /* Slightly smaller shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  
+  .list-button2:hover {
+       background: rgba(0, 0, 0, 0.8); /* Darker hover effect */
+    color: white; /* Better contrast */
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+  }
+  
+  
+  /* Product pricing */
+  .list-product-price {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #fff; /* White text */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  
+  /* Product name */
+  .list-product-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff; /* White text */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Button styles */
+  .list-button {
+   
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .no-products-message {
+    color: #fff; /* White text color */
+    font-size: 18px; /* Adjust font size */
+    text-align: center; /* Center the message */
+    width: 100%; /* Make it full width */
+    padding: 20px; /* Add some padding */
+    background: rgba(0, 0, 0, 0.5); /* Optional background for contrast */
+    border-radius: 18px; /* Rounded corners */
+  }
+  
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .list-product-card {
+      width: 150px; /* Adjust as needed for smaller screens */
+    }
+  }
+  
+  

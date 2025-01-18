@@ -74,7 +74,7 @@
     margin-bottom: 10px;
     overflow: hidden; /* Truncation */
     text-overflow: ellipsis; /* Ellipsis for overflow */
-    white-space: nowrap; /* Prevent wrapping */
+   
     margin-top: 10px;
     max-width: 100%; /* Ensure it does not exceed the container */
 }

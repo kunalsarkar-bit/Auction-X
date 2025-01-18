@@ -120,7 +120,7 @@ const ContactUs = () => {
           <div className="contact-map-container">
             {/* Embed the updated iframe */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3687.915358412205!2d88.29752217419212!3d22.432211379591955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sPailan%20College%20of%20Technology%20and%20Management!5e0!3m2!1sen!2sin!4v1731865790151!5m2!1sen!2sin"
+              src="https://www.google.com/maps/d/embed?mid=13RYCmCKJ3-Rzs6hzfnXwT-tsJrkZubw&ehbc=2E312F"
               width="600"
               height="450"
               style={{ border: 0 }}

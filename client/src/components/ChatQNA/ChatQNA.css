@@ -1,0 +1,242 @@
+/* Chat container */
+.chat-container {
+    width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 18px;
+    font-family: Arial, sans-serif;
+    position: fixed;
+    bottom: 30px;
+    right: 90px;
+    background: rgba(0, 0, 0, 0.15); /* Transparent white */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  box-shadow: 
+  0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+  0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+  0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+  0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+    overflow: hidden;
+    z-index: 100;
+  }
+
+  .chat-container::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
+  /* Open chat button */
+.open-chat-button {
+    position: fixed;
+    bottom: 90px;
+    right: 4px;
+    background-color: rgba(0, 0, 0, 0.5); /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 50%; /* Circular button */
+    width: 55px; /* Width of the button */
+    height: 55px; /* Height of the button */
+    display: flex; /* Center the icon/text */
+    justify-content: center;
+    align-items: center;
+    font-size: 16px; /* Adjust font size */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for prominence */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 10000; /* Ensure it stays on top */
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+  /* Chat header */
+  .chat-header {
+    background-image: linear-gradient(to right, #bf953f, #fcf6ba);
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding-top: 20px;
+    height: 97px;
+  }
+  
+  .chat-header h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .chat-header span {
+    margin: 5px 0 0; /* Reduce the space between h2 and p */
+    font-size: 15px;
+    color: black;
+  }
+  
+  /* Chat body */
+  .chat-body {
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  /* Chat message */
+  .chat-message {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    color: white;
+  }
+  
+  .user-question {
+    font-weight: bold;
+    color: white;
+  }
+  
+  .bot-answer {
+    color: #ffffff;
+    margin-top: 5px;
+  }
+  
+  /* Chat options */
+  .chat-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .chat-option {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  .chat-option:hover {
+    background :  rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  }
+  /* Main question styles */
+.main-question {
+    font-weight: bold;
+     background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    color: white;
+  }
+  
+  /* Sub-question styles */
+  .sub-questions {
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  
+  .sub-question {
+    background-color: #f0f0f0;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    margin-top: 5px;
+  }
+  
+  .sub-question:hover {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    color: white;
+  }
+  
+  /* Media Query for screens smaller than 768px (tablet and mobile) */
+@media screen and (max-width: 768px) {
+  /* Chat container adjustments */
+  .chat-container {
+    width: 300px; /* Adjust the width */
+    right: 60px; /* Move it closer to the right side */
+    bottom: 130px; /* Adjust the bottom position */
+  }
+
+  .chat-header {
+    height: 90px;
+  }
+
+  /* Open chat button adjustments */
+  .open-chat-button {
+    bottom: 95px; /* Adjust the position */
+    right: 20px; /* Move it to the right */
+    width: 50px; /* Smaller button */
+    height: 50px; /* Smaller button */
+  }
+
+  /* Chat header */
+  .chat-header h2 {
+    font-size: 24px; /* Smaller font size for the header */
+  }
+
+  .chat-header span {
+    font-size: 12px; /* Smaller font size for the description */
+  }
+
+  /* Chat body */
+  .chat-body {
+    max-height: 250px; /* Adjust the height for smaller screens */
+    padding: 10px; /* Less padding for smaller devices */
+  }
+
+  /* Chat options */
+  .chat-option {
+    font-size: 12px; /* Smaller font size for options */
+    padding: 8px; /* Less padding for smaller screens */
+  }
+
+  /* Main and sub-question styles */
+  .main-question {
+    font-size: 14px; /* Smaller font size */
+  }
+
+  .sub-question {
+    font-size: 12px; /* Smaller font size */
+  }
+
+  .sub-question:hover {
+    font-size: 13px; /* Slightly larger on hover */
+  }
+}
+
+/* Media Query for screens smaller than 480px (mobile) */
+@media screen and (max-width: 480px) {
+  /* Chat container adjustments */
+  .chat-container {
+    width: 270px; /* Even smaller container */
+    bottom: 130px; /* Move it further up */
+    right: 60px; /* Move it closer to the right side */
+  }
+
+  /* Open chat button adjustments */
+  .open-chat-button {
+    bottom: 95px; /* Adjust the position */
+    right: 20px; /* Move it closer to the edge */
+    width: 45px; /* Even smaller button */
+    height: 45px; /* Even smaller button */
+  }
+
+  /* Chat header */
+  .chat-header h2 {
+    font-size: 20px; /* Even smaller font size */
+  }
+
+  .chat-header p {
+    font-size: 10px; /* Adjust text size */
+  }
+
+  /* Chat body */
+  .chat-body {
+    max-height: 200px; /* Adjust the height for very small screens */
+    padding: 8px; /* Less padding */
+  }
+
+  /* Chat options */
+  .chat-option {
+    font-size: 10px; /* Even smaller font size */
+    padding: 6px; /* Less padding */
+  }
+
+  /* Main and sub-question styles */
+  .main-question {
+    font-size: 12px; /* Smaller font size */
+  }
+
+  .sub-question {
+    font-size: 10px; /* Smaller font size */
+  }
+}

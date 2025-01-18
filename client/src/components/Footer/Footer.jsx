@@ -144,7 +144,7 @@ const Footer = () => {
       <div className="footer-copyrights">
         <div className="footer__image-links">
           <a
-            href="https://github.com/"
+            href="https://linktr.ee/auctionx_official"
             target="_blank"
             rel="noopener noreferrer"
             className="footer__icon github"
@@ -156,7 +156,7 @@ const Footer = () => {
             />
           </a>
           <a
-            href="https://www.linkedin.com/"
+            href="https://linktr.ee/AuctionX"
             target="_blank"
             rel="noopener noreferrer"
             className="footer__icon linkedin"
@@ -168,7 +168,7 @@ const Footer = () => {
             />
           </a>
           <a
-            href="https://www.facebook.com/"
+            href="https://www.facebook.com/share/15nxmDHcJ6/"
             target="_blank"
             rel="noopener noreferrer"
             className="footer__icon facebook"
@@ -180,7 +180,7 @@ const Footer = () => {
             />
           </a>
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/auctionx_official/"
             target="_blank"
             rel="noopener noreferrer"
             className="footer__icon instagram"
@@ -192,7 +192,7 @@ const Footer = () => {
             />
           </a>
           <a
-            href="https://x.com/"
+            href="https://x.com/Auction__X"
             target="_blank"
             rel="noopener noreferrer"
             className="footer__icon x"

@@ -12,6 +12,20 @@
     z-index: 2;
    
   }
+  .bottom-right-messegeBox{
+    position: absolute;
+    bottom: 157px; /* Adjust spacing from the bottom */
+    right: 100px; /* Adjust spacing from the right */
+    width: 150px; /* Set appropriate size for the image */
+    height: auto;
+    cursor: pointer;
+    /* Optional: Adjust opacity for a subtle look */
+    z-index: 3;
+    filter: drop-shadow(0 0 10px rgba(255, 223, 150, 0.8)) /* Inner glow with gold tint */
+    drop-shadow(0 0 20px rgba(255, 223, 150, 0.6)) /* Outer glow for depth */
+    drop-shadow(0 0 30px rgba(255, 223, 150, 0.4)) /* Larger, softer glow */
+    drop-shadow(0 0 40px rgba(255, 223, 150, 0.2)); /* Soft fading outermost glow */
+  }
   .progress {
     height: 20px;
   }
@@ -131,4 +145,260 @@
   .profilebody{
     padding: 0;
   }
+}
+
+
+
+
+
+/*----------------------------------This is the portion of ChatQNA------------------------------*/
+
+
+
+
+
+
+
+/* Chat container */
+.chat-container-profile {
+  width: 350px;
+  border: 1px solid #ccc;
+  border-radius: 18px;
+  font-family: Arial, sans-serif;
+  position: fixed;
+  bottom: 30px;
+  right: 90px;
+  background:rgba(0, 0, 0, 0.6);
+  
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+box-shadow: 
+0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+  overflow: hidden;
+  z-index: 100;
+}
+
+.chat-container-profile::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar */
+}
+
+/* Open chat button */
+.open-chat-button-profile {
+  position: static;
+  bottom: 90px;
+  right: 4px;
+  background-color: rgba(0, 0, 0, 0.5); /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove default border */
+  border-radius: 50%; /* Circular button */
+  width: 55px; /* Width of the button */
+  height: 55px; /* Height of the button */
+  display: flex; /* Center the icon/text */
+  justify-content: center;
+  align-items: center;
+  font-size: 16px; /* Adjust font size */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for prominence */
+  cursor: pointer; /* Pointer cursor on hover */
+  z-index: 10000; /* Ensure it stays on top */
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+/* Chat header */
+.chat-header-profile {
+  background-image: linear-gradient(to right, #bf953f, #fcf6ba);
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  padding-top: 20px;
+  height: 97px;
+}
+
+.chat-header-profile h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.chat-header-profile span {
+  margin: 5px 0 0; /* Reduce the space between h2 and p */
+  font-size: 15px;
+  color: black;
+}
+
+/* Chat body */
+.chat-body-profile {
+  padding: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Chat message */
+.chat-message-profile {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.user-question-profile {
+  font-weight: bold;
+  color: white;
+}
+
+.bot-answer-profile {
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+/* Chat options */
+.chat-options-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-option-profile {
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+}
+
+.chat-option-profile:hover {
+  background :  rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+}
+/* Main question styles */
+.main-question-profile {
+  font-weight: bold;
+   background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  color: white;
+}
+
+/* Sub-question styles */
+.sub-questions-profile {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.sub-question-profile {
+  background-color: #f0f0f0;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  margin-top: 5px;
+}
+
+.sub-question-profile:hover {
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  color: white;
+}
+
+/* Media Query for screens smaller than 768px (tablet and mobile) */
+@media screen and (max-width: 768px) {
+/* Chat container adjustments */
+.chat-container-profile {
+  width: 300px; /* Adjust the width */
+  right: 60px; /* Move it closer to the right side */
+  bottom: 130px; /* Adjust the bottom position */
+}
+
+.chat-header-profile {
+  height: 90px;
+}
+
+/* Open chat button adjustments */
+.open-chat-button-profile {
+  bottom: 95px; /* Adjust the position */
+  right: 20px; /* Move it to the right */
+  width: 50px; /* Smaller button */
+  height: 50px; /* Smaller button */
+}
+
+/* Chat header */
+.chat-header-profile h2 {
+  font-size: 24px; /* Smaller font size for the header */
+}
+
+.chat-header-profile span {
+  font-size: 12px; /* Smaller font size for the description */
+}
+
+/* Chat body */
+.chat-body-profile {
+  max-height: 250px; /* Adjust the height for smaller screens */
+  padding: 10px; /* Less padding for smaller devices */
+}
+
+/* Chat options */
+.chat-option-profile {
+  font-size: 12px; /* Smaller font size for options */
+  padding: 8px; /* Less padding for smaller screens */
+}
+
+/* Main and sub-question styles */
+.main-question-profile {
+  font-size: 14px; /* Smaller font size */
+}
+
+.sub-question-profile {
+  font-size: 12px; /* Smaller font size */
+}
+
+.sub-question-profile:hover {
+  font-size: 13px; /* Slightly larger on hover */
+}
+}
+
+/* Media Query for screens smaller than 480px (mobile) */
+@media screen and (max-width: 480px) {
+/* Chat container adjustments */
+.chat-container-profile {
+  width: 270px; /* Even smaller container */
+  bottom: 130px; /* Move it further up */
+  right: 60px; /* Move it closer to the right side */
+}
+
+/* Open chat button adjustments */
+.open-chat-button-profile {
+  bottom: 95px; /* Adjust the position */
+  right: 20px; /* Move it closer to the edge */
+  width: 45px; /* Even smaller button */
+  height: 45px; /* Even smaller button */
+}
+
+/* Chat header */
+.chat-header-profile h2 {
+  font-size: 20px; /* Even smaller font size */
+}
+
+.chat-header-profile p {
+  font-size: 10px; /* Adjust text size */
+}
+
+/* Chat body */
+.chat-body-profile {
+  max-height: 200px; /* Adjust the height for very small screens */
+  padding: 8px; /* Less padding */
+}
+
+/* Chat options */
+.chat-option-profile {
+  font-size: 10px; /* Even smaller font size */
+  padding: 6px; /* Less padding */
+}
+
+/* Main and sub-question styles */
+.main-question-profile {
+  font-size: 12px; /* Smaller font size */
+}
+
+.sub-question-profile {
+  font-size: 10px; /* Smaller font size */
+}
 }

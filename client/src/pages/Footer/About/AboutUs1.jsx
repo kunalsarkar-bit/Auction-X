@@ -69,7 +69,7 @@ const Team = () => {
                   >
                     <i className="fa-brands fa-linkedin"></i>
                   </a>
-                  <a href="https://github.com/omsardar1" target="_blank">
+                  <a href="https://github.com/OM-SARDAR" target="_blank">
                     <i className="fa-brands fa-github"></i>
                   </a>
                   <a href="mailto:omsardar14@gmail.com" target="_blank">
@@ -97,10 +97,10 @@ const Team = () => {
                   principles.
                 </div>
                 <div className="TEAM-icons">
-                  <a href="#" target="_blank">
+                  <a href="https://www.linkedin.com/in/sourav-khanra-87912433a/" target="_blank">
                     <i className="fa-brands fa-linkedin"></i>
                   </a>
-                  <a href="#" target="_blank">
+                  <a href="https://github.com/Sorav-khanra" target="_blank">
                     <i className="fa-brands fa-github"></i>
                   </a>
                   <a href="mailto:prolaccy60@gmail.com" target="_blank">
@@ -135,7 +135,7 @@ const Team = () => {
                   >
                     <i className="fa-brands fa-linkedin"></i>
                   </a>
-                  <a href="#" target="_blank">
+                  <a href="https://github.com/Subho256" target="_blank">
                     <i className="fa-brands fa-github"></i>
                   </a>
                   <a href="mailto:subhasamantal968@gmail.com" target="_blank">
