@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./ProductList.css";
 import { useNavigate } from "react-router-dom";
+import { GiSandsOfTime } from "react-icons/gi";
+import { ImPriceTags } from "react-icons/im";
 import ReactDOM from "react-dom"; // Import ReactDOM for creating a portal
 import ProductDetailsPopup from "../ProductDetails/ProductDetailsPopUp";
 
@@ -76,38 +78,71 @@ const ProductList = () => {
     }
   };
 
-  const calculateTimeLeft = (biddingStartTime) => {
-    if (!biddingStartTime) return "Date not available";
+  // Calculate time left with days, hours, minutes, and seconds
+  const calculateTimeLeft = (
+    biddingStartDate,
+    biddingStartTime,
+    biddingEndTime
+  ) => {
+    if (!biddingStartDate || !biddingStartTime || !biddingEndTime)
+      return "Date not available";
 
-    let endTime;
+    const startDate = new Date(biddingStartDate);
+    const startTime = new Date(biddingStartTime);
+    startDate.setUTCHours(
+      startTime.getUTCHours(),
+      startTime.getUTCMinutes(),
+      0,
+      0
+    );
 
-    // Check if biddingStartTime is a full ISO string or just a time string
-    if (biddingStartTime.includes("T")) {
-      // If it's an ISO string, directly convert it to a Date
-      endTime = new Date(biddingStartTime);
-    } else {
-      // If it's just a time (e.g., "15:00"), assume today's date and append the time
-      const currentDate = new Date();
-      const dateString = `${currentDate.getFullYear()}-${
-        currentDate.getMonth() + 1
-      }-${currentDate.getDate()}T${biddingStartTime}:00`;
-      endTime = new Date(dateString);
-    }
-
-    if (isNaN(endTime.getTime())) return "Invalid Date"; // Check for invalid date
-
+    const endDateTime = new Date(biddingEndTime);
     const now = new Date();
-    const timeDifference = endTime - now;
+
+    let timeDifference;
+    let isBiddingStarted = now >= startDate;
+
+    if (isBiddingStarted) {
+      timeDifference = endDateTime - now;
+    } else {
+      timeDifference = startDate - now;
+    }
 
     if (timeDifference <= 0) return "Time expired";
 
-    const hoursLeft = Math.floor(timeDifference / (1000 * 60 * 60));
-    const minutesLeft = Math.floor(
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor(
       (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
     );
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000); // Calculate remaining seconds
 
-    return `${hoursLeft} hours, ${minutesLeft} minutes`;
+    return `${days}d ${hours}h ${minutes}m ${seconds}s`;
   };
+
+  const [liveCountdown, setLiveCountdown] = useState({});
+
+  // Update countdown every second
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setLiveCountdown((prevState) => {
+        const updatedCountdown = {};
+        displayedProducts.forEach((product) => {
+          const timeLeft = calculateTimeLeft(
+            product.biddingStartDate,
+            product.biddingStartTime,
+            product.biddingEndTime
+          );
+          updatedCountdown[product._id] = timeLeft;
+        });
+        return updatedCountdown;
+      });
+    }, 1000); // Update every second
+
+    return () => clearInterval(intervalId); // Clean up interval on unmount
+  }, [displayedProducts]);
 
   return (
     <div className="Product-body">
@@ -120,8 +155,11 @@ const ProductList = () => {
               width="100%"
             />
             <h3>{product.name}</h3>
-            <h4>₹{product.biddingStartPrice}</h4>
-            <h4>Time left: {calculateTimeLeft(product.biddingStartTime)}</h4>
+            <h4><ImPriceTags /> ₹{product.biddingStartPrice}</h4>
+            <h4>
+              <GiSandsOfTime /> {liveCountdown[product._id] || "Loading..."}
+            </h4>{" "}
+            {/* Display live countdown */}
             <div className="product-btn-box">
               <button onClick={() => handleOpenPopup(product._id)}>
                 Bid Now

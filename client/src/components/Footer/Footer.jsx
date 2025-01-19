@@ -10,7 +10,7 @@ import githublogo from "../../assets/images/Layouts/github-logo.png";
 import LogoSlider from "../../pages/Footer/LogoSlider";
 
 const Footer = () => {
-   const [activeSection, setActiveSection] = useState(null);
+  const [activeSection, setActiveSection] = useState(null);
 
   const toggleSection = (section) => {
     setActiveSection(activeSection === section ? null : section);

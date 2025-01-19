@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./BidHeader.css"; // Importing CSS file
+import { MdAccountBalanceWallet } from "react-icons/md";
 
 const Header = () => {
   const [amount, setAmount] = useState(0); // State to hold the available amount
@@ -36,7 +37,9 @@ const Header = () => {
     <div className="header">
       <h1 className="header__title">Account Overview</h1>
       <div className="header__balance-container">
-        <span className="header__balance-label">Total Balance:</span>
+        <span className="header__balance-label">
+          <MdAccountBalanceWallet /> Balance:
+        </span>
         <span className="header__balance">₹{amount}</span>
       </div>
     </div>

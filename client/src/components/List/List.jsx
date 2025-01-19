@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios"; // Import Axios
 import { useNavigate } from "react-router-dom";
+import { ImPriceTags } from "react-icons/im";
 import ProductDetailsPopup from "../ProductDetails/ProductDetailsPopUp";
 import ReactDOM from "react-dom"; // Import ReactDOM for creating a portal
 import "./List.css";
@@ -86,7 +87,7 @@ const ProductListing = () => {
                 className="list-product-image"
               />
               <p className="list-product-name">{product.name}</p>
-              <p className="list-product-price">₹{product.biddingStartPrice}</p>
+              <p className="list-product-price"><ImPriceTags /> ₹{product.biddingStartPrice}</p>
               <button
                 className="list-button2"
                 onClick={() => handleOpenPopup(product._id)}

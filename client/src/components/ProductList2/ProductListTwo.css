@@ -3,11 +3,10 @@
     font-family: Arial, sans-serif;
     color: #ffffff;
     /* Radial gradient with only the #d7cec5 color at the center */
-  background-image: radial-gradient(circle, #dca57b 15%, rgba(0, 0, 0, 0) 50%);
+    background-image: radial-gradient(circle, #dca57b 15%, rgba(0, 0, 0, 0) 50%);
     padding: 20px;
     border-radius: 18px;
 }
-
 
 .ProductTwo-container {
     display: flex;
@@ -18,13 +17,13 @@
     max-height: 160vh; /* Reduced height slightly */
     padding: 10px;
     margin: 0 auto;
-
 }
 
-.ProductTwo-info h5{
+.ProductTwo-info h5 {
     color: white;
 }
 
+/* ProductTwo-item Styles with Animation */
 .ProductTwo-item {
     width: 100%;
     max-width: 460px;
@@ -32,25 +31,69 @@
     padding: 15px;
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.15); /* Transparent white */
-  -webkit-backdrop-filter: blur(10px); /* For Safari support */
-  backdrop-filter: blur(10px); /* Apply blur effect */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.8s ease-out;
+    opacity: 0; /* Hidden by default */
+    transform: scale(0.9); /* Slightly scaled down initially */
+    will-change: transform, opacity; /* Improve animation performance */
 }
 
+.ProductTwo-item.show {
+    opacity: 1;
+    transform: scale(1); /* Card scales to original size */
+}
+
+/* Directional Animations */
+.ProductTwo-item.from-left {
+    transform: translateX(-200px); /* Slides in from the left */
+}
+
+.ProductTwo-item.from-right {
+    transform: translateX(200px); /* Slides in from the right */
+}
+
+.ProductTwo-item.from-top {
+    transform: translateY(-200px); /* Slides in from the top */
+}
+
+.ProductTwo-item.from-bottom {
+    transform: translateY(200px); /* Slides in from the bottom */
+}
+
+/* On hover: Glow effect */
 .ProductTwo-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 
-    0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
-    0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
-    0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
-    0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
+    transform: translateY(-3px);
+    box-shadow: 
+        0 0 10px rgba(255, 223, 150, 0.8), /* Inner glow with gold tint */
+        0 0 20px rgba(255, 223, 150, 0.6), /* Outer glow for depth */
+        0 0 30px rgba(255, 223, 150, 0.4), /* Larger, softer glow */
+        0 0 40px rgba(255, 223, 150, 0.2); /* Soft fading outermost glow */
 }
 
-
+/* ProductTwo-item Content */
 .ProductTwo-item-content {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Animating visibility on page load */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.ProductTwo-item {
+    animation: slideIn 0.8s ease-out forwards;
 }
 
 .ProductTwo-image {
@@ -68,20 +111,17 @@
 
 .ProductTwo-name {
     color: #ffffff; /* White text color */
-    /* font-size: 1.1em; */
-   text-align: center;
+    text-align: center;
     font-weight: bold;
     margin-bottom: 10px;
     overflow: hidden; /* Truncation */
     text-overflow: ellipsis; /* Ellipsis for overflow */
-   
     margin-top: 10px;
     max-width: 100%; /* Ensure it does not exceed the container */
 }
 
-
-
-.ProductTwo-info p, .ProductTwo-info h4 {
+.ProductTwo-info p,
+.ProductTwo-info h4 {
     margin: 5px 0;
     color: #ffffff; /* White text color for details */
 }
@@ -107,10 +147,10 @@
 }
 
 .ProductTwo-button:hover {
-     background: rgba(0, 0, 0, 0.8); /* Darker hover effect */
-  color: white; /* Better contrast */
-  transform: scale(1.05); /* Slight zoom */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+    background: rgba(0, 0, 0, 0.8); /* Darker hover effect */
+    color: white; /* Better contrast */
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Stronger shadow */
 }
 
 /* Responsive styles */
@@ -125,6 +165,7 @@
         flex-direction: column;
         align-items: center;
     }
+
     .ProductTwo-image {
         margin-right: 0;
         margin-bottom: 10px;

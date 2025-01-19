@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import TodayBids from "../../assets/images/components/Banner4/Rashmika.gif";
-import TommorowBids from "../../assets/images/components/Banner4/NobodyBoy.gif";
+import TodayBids from "../../assets/images/components/Banner4/Today.gif";
+import TommorowBids from "../../assets/images/components/Banner4/Tommorow.gif";
 import "./BannerFour.css";
 
 const ProductListing = () => {

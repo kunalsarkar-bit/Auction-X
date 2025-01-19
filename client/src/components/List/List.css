@@ -93,9 +93,8 @@
 /* Individual product cards */
 .list-product-card {
   background: rgba(255, 255, 255, 0.15); /* Transparent white */
-  
-  -webkit-backdrop-filter: blur(10px); /* For Safari support */
   backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
   border-radius: 18px;
   padding: 15px;
   margin: 20px;

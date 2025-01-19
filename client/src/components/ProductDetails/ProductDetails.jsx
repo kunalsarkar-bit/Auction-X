@@ -16,6 +16,10 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Share from "../Share/ShareMenu";
+import { MdAccountBalanceWallet } from "react-icons/md";
+import { RiMapPinTimeFill } from "react-icons/ri";
+import { IoPerson } from "react-icons/io5";
+import { ImHammer2 } from "react-icons/im";
 // import TimeCountdown from "./TimeCountdown";
 import "./TimeCountdown.css";
 import io from "socket.io-client";
@@ -506,8 +510,8 @@ const CarDetailsPage = () => {
             <Card>
               <Card.Body>
                 <h3>{carData.name}</h3>
-                <h5>Current Bid : ₹{currentBid}</h5>
-                <h5>Current Bidder : {bidderName}</h5>
+                <h5><ImHammer2 /> Current Bid : ₹{currentBid}</h5>
+                <h5><IoPerson /> Current Bidder : {bidderName}</h5>
 
                 <div className="timer">
                   <h2>
@@ -515,8 +519,8 @@ const CarDetailsPage = () => {
                     {isBiddingStarted
                       ? isBiddingEnded
                         ? "HAS ENDED"
-                        : "ENDS IN:"
-                      : "STARTS IN:"}
+                        : "ENDS IN "
+                      : "STARTS IN "}<RiMapPinTimeFill />
                   </h2>
                   <div className="timer__boxes">
                     <div className="timer__box">
@@ -586,7 +590,7 @@ const CarDetailsPage = () => {
 
             <Card className="mt-3">
               <Card.Body>
-                <h5>Balance : ₹{userMoney}</h5>
+                <h5><MdAccountBalanceWallet /> Balance : ₹{userMoney}</h5>
               </Card.Body>
             </Card>
 

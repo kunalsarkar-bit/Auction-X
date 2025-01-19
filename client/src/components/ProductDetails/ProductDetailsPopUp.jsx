@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { ImPriceTags } from "react-icons/im";
+import { MdOutlineDescription } from "react-icons/md";
+import { RiMapPinTimeFill } from "react-icons/ri";
 import "./ProductDetailsPopUp.css";
 import "./TimeCountdown.css";
 
@@ -122,16 +125,16 @@ const ProductDetailsPopup = ({ productId, onClose }) => {
       >
         <div className="carDetails-popup-content-left">
           <h2>{product.name}</h2>
-          <p>Price: ₹{product.biddingStartPrice}</p>
-          <p>Description: {product.description}</p>
+          <p><ImPriceTags /> Price: ₹{product.biddingStartPrice}</p>
+          <p><MdOutlineDescription /> Description: {product.description}</p>
           <div className="timer">
             <h2>
               BID{" "}
               {isBiddingStarted
                 ? isBiddingEnded
                   ? "HAS ENDED"
-                  : "ENDS IN:"
-                : "STARTS IN:"}
+                  : "ENDS IN "
+                : "STARTS IN "}<RiMapPinTimeFill />
             </h2>
             <div className="timer__boxes">
               <div className="timer__box">

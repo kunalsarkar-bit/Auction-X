@@ -20,6 +20,7 @@
     transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth slide in from right */
     width: 100%; /* Set width of the card item to fill the card */
     height: 75vh; /* Allow the image to define the height */
+    cursor: pointer;
 }
 
 .wide-card-item.active {
