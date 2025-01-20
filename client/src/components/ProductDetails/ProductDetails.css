@@ -83,7 +83,9 @@
   cursor: pointer; /* Makes it appear clickable */
   transition: background-color 0.3s, transform 0.2s;
 }
-
+.ProductDetails h5 h1{
+  color: black;
+}
 /* Hover effect */
 .ProductDetails-fa:hover {
   background-color: #f5c278; /* Darker shade for hover effect */

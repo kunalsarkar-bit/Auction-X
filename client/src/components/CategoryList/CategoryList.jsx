@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./CategoryList.css";
+import { GiSandsOfTime } from "react-icons/gi";
+import { ImPriceTags } from "react-icons/im";
 import { useNavigate, useParams } from "react-router-dom";
 
 const ProductListTwo = () => {
@@ -9,6 +11,7 @@ const ProductListTwo = () => {
   const [displayedProducts, setDisplayedProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [timeLeft, setTimeLeft] = useState({});
   const productsPerPage = 11;
 
   const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
@@ -35,6 +38,9 @@ const ProductListTwo = () => {
         // Set products and displayed products for pagination
         setProducts(randomizedData);
         setDisplayedProducts(randomizedData.slice(0, productsPerPage));
+
+        // Initialize timers for the products
+        initializeTimers(randomizedData);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
@@ -66,37 +72,88 @@ const ProductListTwo = () => {
     }
   };
 
-  const calculateTimeLeft = (biddingStartTime) => {
-    if (!biddingStartTime) return "Date not available";
+  const initializeTimers = (products) => {
+    products.forEach((product) => {
+      const { biddingStartDate, biddingStartTime, biddingEndTime } = product;
+      const startDate = new Date(biddingStartDate);
+      const startTime = new Date(biddingStartTime);
 
-    let endTime;
+      startDate.setUTCHours(
+        startTime.getUTCHours(),
+        startTime.getUTCMinutes(),
+        0,
+        0
+      );
 
-    // Check if biddingStartTime is a full ISO string or just a time string
-    if (biddingStartTime.includes("T")) {
-      // If it's an ISO string, directly convert it to a Date
-      endTime = new Date(biddingStartTime);
+      const endTime = new Date(biddingEndTime);
+
+      if (!isNaN(endTime)) {
+        updateTimer(product._id, startDate, endTime);
+      } else {
+        console.error("Invalid end time for product:", product._id);
+      }
+    });
+
+    const timerInterval = setInterval(() => {
+      products.forEach((product) => {
+        const { biddingStartDate, biddingStartTime, biddingEndTime } = product;
+        const startDate = new Date(biddingStartDate);
+        const startTime = new Date(biddingStartTime);
+
+        startDate.setUTCHours(
+          startTime.getUTCHours(),
+          startTime.getUTCMinutes(),
+          0,
+          0
+        );
+
+        const endTime = new Date(biddingEndTime);
+
+        if (!isNaN(endTime)) {
+          updateTimer(product._id, startDate, endTime);
+        }
+      });
+    }, 1000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(timerInterval);
+  };
+
+  const updateTimer = (productId, startTime, endTime) => {
+    const now = new Date().getTime();
+    let difference =
+      now < startTime.getTime()
+        ? startTime.getTime() - now
+        : endTime.getTime() - now;
+
+    if (difference > 0) {
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      setTimeLeft((prev) => ({
+        ...prev,
+        [productId]: {
+          days: String(days).padStart(2, "0"),
+          hours: String(hours).padStart(2, "0"),
+          minutes: String(minutes).padStart(2, "0"),
+          seconds: String(seconds).padStart(2, "0"),
+        },
+      }));
     } else {
-      // If it's just a time (e.g., "15:00"), assume today's date and append the time
-      const currentDate = new Date();
-      const dateString = `${currentDate.getFullYear()}-${
-        currentDate.getMonth() + 1
-      }-${currentDate.getDate()}T${biddingStartTime}:00`;
-      endTime = new Date(dateString);
+      setTimeLeft((prev) => ({
+        ...prev,
+        [productId]: {
+          days: "00",
+          hours: "00",
+          minutes: "00",
+          seconds: "00",
+        },
+      }));
     }
-
-    if (isNaN(endTime.getTime())) return "Invalid Date"; // Check for invalid date
-
-    const now = new Date();
-    const timeDifference = endTime - now;
-
-    if (timeDifference <= 0) return "Time expired";
-
-    const hoursLeft = Math.floor(timeDifference / (1000 * 60 * 60));
-    const minutesLeft = Math.floor(
-      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-    );
-
-    return `${hoursLeft} hours, ${minutesLeft} minutes`;
   };
 
   return (
@@ -110,8 +167,17 @@ const ProductListTwo = () => {
               width="100%"
             />
             <h3>{product.name}</h3>
-            <h4>₹{product.biddingStartPrice}</h4>
-            <h4>Time left: {calculateTimeLeft(product.biddingStartTime)}</h4>
+            <h4><ImPriceTags /> ₹{product.biddingStartPrice}</h4>
+            <p className="ProductTwo-time">
+              <GiSandsOfTime />
+              {timeLeft[product._id]
+                ? ` ${timeLeft[product._id].days}d ${
+                    timeLeft[product._id].hours
+                  }h ${timeLeft[product._id].minutes}m ${
+                    timeLeft[product._id].seconds
+                  }s`
+                : "Loading..."}
+            </p>
             <div className="product-btn-box">
               <button onClick={() => navigate(`/product/${product._id}`)}>
                 Bid Now
