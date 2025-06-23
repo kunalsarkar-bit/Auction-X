@@ -8,6 +8,7 @@ import credit from "../../../../assets/images/components/Payment/credit.png";
 import netbank from "../../../../assets/images/components/Payment/net-banking-icon.png";
 import { toast } from "react-hot-toast";
 import axios from "axios";
+const RAZORPAY_KEY = process.env.REACT_APP_RAZORPAY_API_KEY;
 
 const PaymentPage = () => {
   const [amount, setAmount] = useState(0); // Initial available amount set to 0
@@ -64,7 +65,7 @@ const PaymentPage = () => {
     const amountToPay = parseInt(customAmount, 10) || 199;
 
     var options = {
-      key: "rzp_test_ND81BEh4gRO77Q", // Enter the Key ID generated from the Dashboard
+      key: RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
       amount: amountToPay * 100, // Convert to paise
       currency: "INR",
       name: "Payment Practice",

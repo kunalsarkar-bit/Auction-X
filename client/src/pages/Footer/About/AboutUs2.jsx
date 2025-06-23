@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./AboutUs2.css"; // Updated unique CSS file
 import storyImageSrc from "../../../assets/images/FooterElements/AboutUs/our-story.png";
-import fashionImageSrc from "../../../assets/images/FooterElements/AboutUs/our-story-innovation.png";
+import fashionImageSrc from "../../../assets/images/FooterElements/AboutUs/our-story-innovation.jpg";
 
 function BewakoofStory() {
   return (
@@ -28,14 +28,16 @@ function BewakoofStory() {
                 Our story starts with the name <strong>AuctionX</strong>.
               </p>
               <p className="about-text-white">
-                Society perceives AuctionX as "stupid." But what does society
-                call AuctionX? Often, it’s anything different or anything that’s
-                done differently.
+              Auction X was born to break the mold—a bold idea in a world afraid of difference. 
+              When society dismisses something as “stupid,” it’s often because it’s unfamiliar or challenges the norm. 
+              Auction X embraces this perception, standing as a beacon for those who dare to dream beyond conventions.
+
+
               </p>
               <p className="about-text-white">
-                Often when people have done the right thing, without caring
-                about what society thinks, they have been called AuctionX. These
-                are the people who have changed the world.
+              It’s not just an auction platform—it’s a movement. 
+              A community built on trust, innovation, and fairness, where every bid tells a story of possibility. 
+              Auction X isn’t here to fit in. It’s here to redefine the rules.
               </p>
             </div>
           </div>
@@ -58,14 +60,13 @@ function BewakoofStory() {
       {/* Mission Statement Section */}
       <div className="container mt-5 text-center about-mission-section">
         <p className="about-text-white mt-4">
-          For us, AuctionX is the spirit of looking at things differently.
+        For us, Auction X is about seeing things differently. 
         </p>
         <p className="about-text-white">
-          This was the spirit on which AuctionX was founded in 2024. With the
-          belief that a business cannot be about financial gain alone.
+        Founded in 2024, it was built on the belief that auctions can do more than generate profit—they can make an impact.
         </p>
         <p className="fw-bold about-text-white">
-          It is about making a positive impact. That's what AuctionX is about.
+        Auction X connects people through competitive bidding, turning every auction into a story of opportunity and innovation. It’s not just about buying and selling; it’s about reshaping how value is created and shared.
         </p>
       </div>
 
@@ -79,7 +80,7 @@ function BewakoofStory() {
               className="img-fluid about-fashion-image"
             />
           ) : (
-            <p className="text-muted">Fashion image not available</p>
+            <p className="text-muted">Auction X image not available</p>
           )}
           <h2 className="fw-bold about-text-white mt-4">AuctionX</h2>
           <h3 className="fw-bold about-text-muted">
@@ -95,7 +96,7 @@ function BewakoofStory() {
       {/* Stats Section */}
       <div className="row text-center about-stats-section my-5">
         <div className="col-md-3">
-          <h3 className="fw-bold about-text-white">3 months</h3>
+          <h3 className="fw-bold about-text-white">4 months</h3>
           <p className="about-text-muted">of journey so far</p>
         </div>
         <div className="col-md-3">

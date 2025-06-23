@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import "../ProductList2/ProductListTwo.css";
 import { useNavigate } from "react-router-dom";
-import ReactDOM from "react-dom"; // Import ReactDOM for creating a portal
+import ReactDOM from "react-dom";
 import ProductDetailsPopup from "../ProductDetails/ProductDetailsPopUp";
 
 const TodayBid = () => {
@@ -10,50 +10,114 @@ const TodayBid = () => {
   const [displayedProducts, setDisplayedProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const productsPerPage = 11;
   const [selectedProductId, setSelectedProductId] = useState(null);
-
-  const handleOpenPopup = (id) => {
-    setSelectedProductId(id); // Open the popup with the selected product's ID
-  };
-
-  const handleClosePopup = () => {
-    setSelectedProductId(null); // Close the popup
-  };
+  const [timeLeft, setTimeLeft] = useState({});
+  const productsPerPage = 11;
+  const intervalsRef = useRef({});
 
   const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
+
+  const getDayName = (dateString) => {
+    const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const date = new Date(dateString);
+    return days[date.getDay()] || "Unknown";
+  };
+
   useEffect(() => {
     const fetchAndRandomizeProducts = async () => {
       try {
         const response = await fetch("http://localhost:5000/api/products/");
         const data = await response.json();
 
-        // Get today's date in YYYY-MM-DD format
         const today = new Date().toISOString().split("T")[0];
 
-        // Filter products that are active and have a matching biddingStartDate
         const activeProducts = data.filter(
           (product) =>
             product.status === "Active" &&
             product.biddingStartDate &&
-            new Date(product.biddingStartDate).toISOString().split("T")[0] === today
+            new Date(product.biddingStartDate).toISOString().split("T")[0] ===
+              today
         );
 
         if (activeProducts.length === 0) {
           console.log("No active products found for today's date");
         }
 
-        // Shuffle and set the filtered active products
         const randomizedData = shuffleArray(activeProducts);
         setProducts(randomizedData);
         setDisplayedProducts(randomizedData.slice(0, productsPerPage));
+
+        initializeTimers(randomizedData);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
     };
 
     fetchAndRandomizeProducts();
+
+    return () => {
+      Object.values(intervalsRef.current).forEach(clearInterval);
+      intervalsRef.current = {};
+    };
   }, []);
+
+  const initializeTimers = (products) => {
+    products.forEach((product) => {
+      const { biddingEndTime } = product;
+      const endTime = new Date(biddingEndTime);
+
+      if (!isNaN(endTime)) {
+        updateTimer(product._id, endTime);
+
+        intervalsRef.current[product._id] = setInterval(
+          () => updateTimer(product._id, endTime),
+          1000
+        );
+      } else {
+        console.error("Invalid end time for product:", product._id);
+      }
+    });
+  };
+
+  const updateTimer = (productId, endTime) => {
+    const now = new Date().getTime();
+    const difference = endTime.getTime() - now;
+
+    if (difference > 0) {
+      const hours = Math.floor(difference / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      setTimeLeft((prev) => ({
+        ...prev,
+        [productId]: {
+          hours: String(hours).padStart(2, "0"),
+          minutes: String(minutes).padStart(2, "0"),
+          seconds: String(seconds).padStart(2, "0"),
+        },
+      }));
+    } else {
+      clearInterval(intervalsRef.current[productId]);
+      delete intervalsRef.current[productId];
+
+      setTimeLeft((prev) => ({
+        ...prev,
+        [productId]: {
+          hours: "00",
+          minutes: "00",
+          seconds: "00",
+        },
+      }));
+    }
+  };
 
   const loadMoreProducts = useCallback(() => {
     if (loading) return;
@@ -78,37 +142,20 @@ const TodayBid = () => {
     }
   };
 
-  const calculateTimeLeft = (biddingStartTime) => {
-    if (!biddingStartTime) return "Date not available";
-
-    let endTime;
-
-    // Check if biddingStartTime is a full ISO string or just a time string
-    if (biddingStartTime.includes("T")) {
-      // If it's an ISO string, directly convert it to a Date
-      endTime = new Date(biddingStartTime);
-    } else {
-      // If it's just a time (e.g., "15:00"), assume today's date and append the time
-      const currentDate = new Date();
-      const dateString = `${currentDate.getFullYear()}-${
-        currentDate.getMonth() + 1
-      }-${currentDate.getDate()}T${biddingStartTime}:00`;
-      endTime = new Date(dateString);
+  const calculateTimeLeft = (productId) => {
+    if (timeLeft[productId]) {
+      const { hours, minutes, seconds } = timeLeft[productId];
+      return `${hours}:${minutes}:${seconds}`;
     }
+    return "00:00:00";
+  };
 
-    if (isNaN(endTime.getTime())) return "Invalid Date"; // Check for invalid date
+  const handleOpenPopup = (id) => {
+    setSelectedProductId(id);
+  };
 
-    const now = new Date();
-    const timeDifference = endTime - now;
-
-    if (timeDifference <= 0) return "Time expired";
-
-    const hoursLeft = Math.floor(timeDifference / (1000 * 60 * 60));
-    const minutesLeft = Math.floor(
-      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-    );
-
-    return `${hoursLeft} hours, ${minutesLeft} minutes`;
+  const handleClosePopup = () => {
+    setSelectedProductId(null);
   };
 
   return (
@@ -124,14 +171,14 @@ const TodayBid = () => {
               />
               <div className="ProductTwo-info">
                 <h5 className="ProductTwo-name">{product.name}</h5>
-
                 <h6>
                   <p>Category: {product.category}</p>
                 </h6>
-
                 <h5>Price: ₹{product.biddingStartPrice}</h5>
+                <p>Bidding Day: {getDayName(product.biddingStartDate)}</p>{" "}
+                {/* Added the day */}
                 <p className="ProductTwo-time">
-                  Ends in: {calculateTimeLeft(product.biddingStartTime)}
+                  Starts in: {calculateTimeLeft(product._id)}
                 </p>
                 <button
                   className="ProductTwo-button"
@@ -158,7 +205,7 @@ const TodayBid = () => {
               onClose={handleClosePopup}
             />
           </div>,
-          document.body // This will render the popup at the body level
+          document.body
         )}
     </div>
   );
